@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* SteakosaurusBurger.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +17,10 @@ namespace DinoDiner.Menu.Entrees
         public double Price { get; set; }
         public uint Calories { get; set; }
 
+        /// <summary>
+        /// Adds all of the ingredients to the list.
+        /// <return>A list of strings with all of the ingredients included</return>
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -27,23 +34,38 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Constructor to initiate the price and calories.
+        /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
             this.Calories = 621;
         }
+        /// <summary>
+        /// Removes "Whole Wheat Bun" from the ingredients list
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
+        /// <summary>
+        /// Removes "Pickle" from the ingredients list
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
+        /// <summary>
+        /// Removes "Ketchup" from the ingredients list
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
+        /// <summary>
+        /// Removes "Mustard" from the ingredients list
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;
