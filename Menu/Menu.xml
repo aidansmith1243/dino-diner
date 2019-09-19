@@ -187,6 +187,72 @@
             Removes "Parmesan Cheese" from the ingredients list
             </summary>
         </member>
+        <member name="T:DinoDiner.Menu.Sides.Fryceritops">
+            <summary>
+            Side dish class to provide all the information about this side.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.Fryceritops.Size">
+            <summary>
+            Will set the size and adjust the price and calories.
+            <Returns>The current size</Returns>
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.Fryceritops.Ingredients">
+            <summary>
+            Develops the list of ingredients in the current side.
+            <Returns>All of the ingredients in a string List</Returns>
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Sides.Fryceritops.#ctor">
+            <summary>
+            Constructor to set up the calories and price for this side.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Sides.MeteorMacAndCheese">
+            <summary>
+            Side dish class to provide all the information about this side.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.MeteorMacAndCheese.Size">
+            <summary>
+            Will set the size and adjust the price and calories.
+            <Returns>The current size</Returns>
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.MeteorMacAndCheese.Ingredients">
+            <summary>
+            Develops the list of ingredients in the current side.
+            <Returns>All of the ingredients in a string List</Returns>
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Sides.MeteorMacAndCheese.#ctor">
+            <summary>
+            Constructor to set up the calories and price for this side.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Sides.MezzorellaSticks">
+            <summary>
+            Side dish class to provide all the information about this side.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.MezzorellaSticks.Size">
+            <summary>
+            Will set the size and adjust the price and calories.
+            <Returns>The current size</Returns>
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.MezzorellaSticks.Ingredients">
+            <summary>
+            Develops the list of ingredients in the current side.
+            <Returns>All of the ingredients in a string List</Returns>
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Sides.MezzorellaSticks.#ctor">
+            <summary>
+            Constructor to set up the calories and price for this side.
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Sides.Side.Price">
             <summary>
             Gets and sets the price
@@ -205,6 +271,28 @@
         <member name="P:DinoDiner.Menu.Sides.Side.Size">
             <summary>
             Gets or sets the size
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Sides.Triceritots">
+            <summary>
+            Side dish class to provide all the information about this side.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.Triceritots.Size">
+            <summary>
+            Will set the size and adjust the price and calories.
+            <Returns>The current size</Returns>
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.Triceritots.Ingredients">
+            <summary>
+            Develops the list of ingredients in the current side.
+            <Returns>All of the ingredients in a string List</Returns>
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Sides.Triceritots.#ctor">
+            <summary>
+            Constructor to set up the calories and price for this side.
             </summary>
         </member>
     </members>

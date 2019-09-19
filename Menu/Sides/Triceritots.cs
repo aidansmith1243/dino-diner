@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Sides
     /// <summary>
     /// Side dish class to provide all the information about this side.
     /// </summary>
-    public class Fryceritops : Side
+    public class Triceritots: Side
     {
         private Size size;
         /// <summary>
@@ -27,15 +27,15 @@ namespace DinoDiner.Menu.Sides
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 222;
+                        Calories = 352;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 365;
+                        Calories = 410;
                         break;
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 480;
+                        Calories = 590;
                         break;
                 }
 
@@ -61,12 +61,11 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Constructor to set up the calories and price for this side.
         /// </summary>
-        public Fryceritops()
+        public Triceritots()
         {
-            Calories = 222;
+            Calories = 352;
             Price = 0.99;
 
         }
-        
     }
 }

@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Sides
     /// <summary>
     /// Side dish class to provide all the information about this side.
     /// </summary>
-    public class Fryceritops : Side
+    public class MeteorMacAndCheese: Side
     {
         private Size size;
         /// <summary>
@@ -27,15 +27,15 @@ namespace DinoDiner.Menu.Sides
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 222;
+                        Calories = 420;
                         break;
                     case Size.Medium:
                         Price = 1.45;
-                        Calories = 365;
+                        Calories = 490;
                         break;
                     case Size.Large:
                         Price = 1.95;
-                        Calories = 480;
+                        Calories = 520;
                         break;
                 }
 
@@ -50,9 +50,9 @@ namespace DinoDiner.Menu.Sides
             get
             {
                 List<string> ingredients = new List<string>();
-                ingredients.Add("Potato");
-                ingredients.Add("Salt");
-                ingredients.Add("Vegetable Oil");
+                ingredients.Add("Macaroni Noodles");
+                ingredients.Add("Cheese Product");
+                ingredients.Add("Pork Sausage");
                 return ingredients;
             }
         }
@@ -61,12 +61,11 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Constructor to set up the calories and price for this side.
         /// </summary>
-        public Fryceritops()
+        public MeteorMacAndCheese()
         {
-            Calories = 222;
+            Calories = 420;
             Price = 0.99;
 
         }
-        
     }
 }
