@@ -7,21 +7,21 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class SteakosaurusBurger
+    /// <summary>
+    /// Entree class to hold all the information about the current entree.
+    /// </summary>
+    public class SteakosaurusBurger: Entree
     {
         private bool bun = true;
         private bool pickle = true;
         private bool ketchup = true;
         private bool mustard = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
         /// <summary>
         /// Adds all of the ingredients to the list.
         /// <return>A list of strings with all of the ingredients included</return>
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

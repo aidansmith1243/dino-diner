@@ -4,6 +4,11 @@
         <name>Menu</name>
     </assembly>
     <members>
+        <member name="T:DinoDiner.Menu.Entrees.Brontowurst">
+            <summary>
+            Entree class to hold all the information about the current entree.
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Entrees.Brontowurst.Ingredients">
             <summary>
             Adds all of the ingredients to the list.
@@ -30,6 +35,11 @@
             This method removes "Onion" from the ingredient list.
             </summary>
         </member>
+        <member name="T:DinoDiner.Menu.Entrees.DinoNuggets">
+            <summary>
+            Entree class to hold all the information about the current entree.
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Entrees.DinoNuggets.Ingredients">
             <summary>
             Adds all of the ingredients to the list.
@@ -45,6 +55,31 @@
             <summary>
             Adds one nugget to the order and increases the price and calories for
             the new nugget.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.Entree">
+            <summary>
+            abstract class to store the ingredients, price, and calories for an entree.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.Entree.Ingredients">
+            <summary>
+            Gets the ingredients list
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.Entree.Price">
+            <summary>
+            Gets and sets the price
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.Entree.Calories">
+            <summary>
+            Gets and sets the calories
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.PrehistoricPBJ">
+            <summary>
+            Entree class to hold all the information about the current entree.
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entrees.PrehistoricPBJ.Ingredients">
@@ -68,6 +103,11 @@
             Removes "Jelly" from the ingredients list
             </summary>
         </member>
+        <member name="T:DinoDiner.Menu.Entrees.PterodactylWings">
+            <summary>
+            Entree class to hold all the information about the current entree.
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Entrees.PterodactylWings.Ingredients">
             <summary>
             Adds all of the ingredients to the list.
@@ -77,6 +117,11 @@
         <member name="M:DinoDiner.Menu.Entrees.PterodactylWings.#ctor">
             <summary>
             Constructor to initiate the price and calories.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.SteakosaurusBurger">
+            <summary>
+            Entree class to hold all the information about the current entree.
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entrees.SteakosaurusBurger.Ingredients">
@@ -108,6 +153,11 @@
         <member name="M:DinoDiner.Menu.Entrees.SteakosaurusBurger.HoldMustard">
             <summary>
             Removes "Mustard" from the ingredients list
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.TRexKingBurger">
+            <summary>
+            Entree class to hold all the information about the current entree.
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entrees.TRexKingBurger.Ingredients">
@@ -159,6 +209,11 @@
         <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldMayo">
             <summary>
             Removes "Mayo" from the ingredients list
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.VelociWrap">
+            <summary>
+            Entree class to hold all the information about the current entree.
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entrees.VelociWrap.Ingredients">
@@ -251,6 +306,16 @@
         <member name="M:DinoDiner.Menu.Sides.MezzorellaSticks.#ctor">
             <summary>
             Constructor to set up the calories and price for this side.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Sides.Size">
+            <summary>
+            Enum to hold different size sides.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Sides.Side">
+            <summary>
+            Abstract side class to hold properties for price, ingredients, calories, and ingredients.
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Sides.Side.Price">

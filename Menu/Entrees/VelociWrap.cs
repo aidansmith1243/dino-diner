@@ -7,19 +7,20 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    /// <summary>
+    /// Entree class to hold all the information about the current entree.
+    /// </summary>
+    public class VelociWrap: Entree
     {
         private bool dressing = true;
         private bool lettuce = true;
         private bool cheese = true;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
 
         /// <summary>
         /// Adds all of the ingredients to the list.
         /// <return>A list of strings with all of the ingredients included</return>
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

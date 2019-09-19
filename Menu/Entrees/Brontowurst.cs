@@ -8,21 +8,20 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class Brontowurst
+    /// <summary>
+    /// Entree class to hold all the information about the current entree.
+    /// </summary>
+    public class Brontowurst: Entree
     {
         private bool peppers = true;
         private bool onion = true;
         private bool bun = true;
 
-        public double Price { get; set; }
-
-        public uint Calories { get; set; }
-
         /// <summary>
         /// Adds all of the ingredients to the list.
         /// <return>A list of strings with all of the ingredients included</return>
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
