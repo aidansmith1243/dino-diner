@@ -4,10 +4,16 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// A type of drink that has special ingredients, prices, calories, and methods.
+    /// </summary>
     public class Sodasaurus: Drink
     {
         private Size size;
         private Flavor flavor;
+        /// <summary>
+        /// Property to change the flavor of the soda.
+        /// </summary>
         public Flavor Flavor
         {
             get
@@ -19,6 +25,9 @@ namespace DinoDiner.Menu.Drinks
                 this.flavor = value;
             }
         }
+        /// <summary>
+        /// Property to get and set the size of the drink and change the price and calories accordingly
+        /// </summary>
         public override Size Size
         {
             get
@@ -45,6 +54,9 @@ namespace DinoDiner.Menu.Drinks
                 }
             }
         }
+        /// <summary>
+        /// Property that gives the ingredients of the current drink.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -56,6 +68,9 @@ namespace DinoDiner.Menu.Drinks
                 return ingredients;
             }
         }
+        /// <summary>
+        /// Create the soda with a size of small and defaults to cola.
+        /// </summary>
         public Sodasaurus()
         {
             Size = Size.Small;

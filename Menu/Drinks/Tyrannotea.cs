@@ -4,10 +4,16 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// A type of drink that has special ingredients, prices, calories, and methods.
+    /// </summary>
     public class Tyrannotea: Drink
     {
         private Size size;
         private bool sweet;
+        /// <summary>
+        /// Property to set if the customer wants sweet tea.
+        /// </summary>
         public bool Sweet
         {
             get
@@ -21,6 +27,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
         private bool lemon;
+        /// <summary>
+        /// Property to add a lemon to the drink.
+        /// </summary>
         public bool Lemon
         {
             get
@@ -32,6 +41,9 @@ namespace DinoDiner.Menu.Drinks
                 this.lemon = value;
             }
         }
+        /// <summary>
+        /// Property to get and set the size of the drink and change the price and calories accordingly
+        /// </summary>
         public override Size Size
         {
             get
@@ -59,6 +71,9 @@ namespace DinoDiner.Menu.Drinks
                 if (Sweet) Calories *= 2;
             }
         }
+        /// <summary>
+        /// Property that gives the ingredients of the current drink.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -71,6 +86,9 @@ namespace DinoDiner.Menu.Drinks
                 return ingredients;
             }
         }
+        /// <summary>
+        /// Creates the tea with default size of small, not sweet, and no lemon.
+        /// </summary>
         public Tyrannotea()
         {
             Size = Size.Small;
@@ -78,6 +96,9 @@ namespace DinoDiner.Menu.Drinks
             Lemon = false;
 
         }
+        /// <summary>
+        /// Adds a lemon into the drink.
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;

@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * WaterTest.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -8,6 +12,7 @@ namespace MenuTest.Drinks
 {
     public class WaterTest
     {
+        [Fact]
         public void CorrectDefaultValues()
         {
             Water t = new Water();
@@ -67,7 +72,8 @@ namespace MenuTest.Drinks
             Water t = new Water();
             List<string> ingre = t.Ingredients;
             Assert.Contains<string>("Water", ingre);
-            Assert.Equal<int>(1, ingre.Count);
+            int len = ingre.Count;
+            Assert.Equal<int>(1, len);
             t.Lemon = true;
             ingre = t.Ingredients;
             Assert.Contains<string>("Lemon", ingre);

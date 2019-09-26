@@ -4,6 +4,231 @@
         <name>Menu</name>
     </assembly>
     <members>
+        <member name="T:DinoDiner.Menu.Drinks.Size">
+            <summary>
+            This enum is used to get the variety of drink sizes
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Size.Small">
+            <summary>
+            The smallest size drink that we offer
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Size.Medium">
+            <summary>
+            The size if you think large is too much and small is not enough.
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Size.Large">
+            <summary>
+            Order large if you are very thirsty.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Drinks.Drink">
+            <summary>
+            Base class for all of the drink classes to hold the basics of all of the drinks.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Drink.Ingredients">
+            <summary>
+            Holds the list of ingredients that are contained in the drink.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Drink.Price">
+            <summary>
+            The price of the drink.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Drink.Calories">
+            <summary>
+            The amount of calories that are in the drink.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Drink.Ice">
+            <summary>
+            Whether or not the drink contains ice, defaults to true;
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Drink.Size">
+            <summary>
+            The size of the drink using the size enum.
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.Drink.HoldIce">
+            <summary>
+            Method to remove ice from the drink.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Drinks.JurassicJava">
+            <summary>
+            A type of drink that has special ingredients, prices, calories, and methods.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.JurassicJava.RoomForCream">
+            <summary>
+            Property to say if the person wants to add cream on the java
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.JurassicJava.Decaf">
+            <summary>
+            Property to say if the customer wants their java decaf.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.JurassicJava.Size">
+            <summary>
+            Property to get and set the size of the drink and change the price and calories accordingly
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.JurassicJava.Ingredients">
+            <summary>
+            Property that gives the ingredients of the current drink.
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.JurassicJava.#ctor">
+            <summary>
+            Create the coffee ith default size small, no ice, no room for cream, and not decaf
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.JurassicJava.LeaveRoomForCream">
+            <summary>
+            Sets RoomForCream to true
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.JurassicJava.AddIce">
+            <summary>
+            Puts ice in the drink.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Drinks.Sodasaurus">
+            <summary>
+            A type of drink that has special ingredients, prices, calories, and methods.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Sodasaurus.Flavor">
+            <summary>
+            Property to change the flavor of the soda.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Sodasaurus.Size">
+            <summary>
+            Property to get and set the size of the drink and change the price and calories accordingly
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Sodasaurus.Ingredients">
+            <summary>
+            Property that gives the ingredients of the current drink.
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.Sodasaurus.#ctor">
+            <summary>
+            Create the soda with a size of small and defaults to cola.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Drinks.Flavor">
+            <summary>
+            Holds all of the Flavorins for the sodas.
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Flavor.Cola">
+            <summary>
+            Cola variety of flavor
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Flavor.Orange">
+            <summary>
+            Orange variety of flavor
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Flavor.Vanilla">
+            <summary>
+            Vanilla variety of flavor
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Flavor.Chocolate">
+            <summary>
+            Chocolate variety of flavor
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Flavor.RootBeer">
+            <summary>
+            Rootbeer variety of flavor
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Flavor.Cherry">
+            <summary>
+            Cherry variety of flavor
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Drinks.Flavor.Lime">
+            <summary>
+            Lime variety of flavor
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Drinks.Tyrannotea">
+            <summary>
+            A type of drink that has special ingredients, prices, calories, and methods.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Tyrannotea.Sweet">
+            <summary>
+            Property to set if the customer wants sweet tea.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Tyrannotea.Lemon">
+            <summary>
+            Property to add a lemon to the drink.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Tyrannotea.Size">
+            <summary>
+            Property to get and set the size of the drink and change the price and calories accordingly
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Tyrannotea.Ingredients">
+            <summary>
+            Property that gives the ingredients of the current drink.
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.Tyrannotea.#ctor">
+            <summary>
+            Creates the tea with default size of small, not sweet, and no lemon.
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.Tyrannotea.AddLemon">
+            <summary>
+            Adds a lemon into the drink.
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Drinks.Water">
+            <summary>
+            A type of drink that has special ingredients, prices, calories, and methods.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Water.Lemon">
+            <summary>
+            Property to add a lemon to the drink.
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Water.Size">
+            <summary>
+            Property to get and set the size of the drink and change the price and calories accordingly
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Drinks.Water.Ingredients">
+            <summary>
+            Property that gives the ingredients of the current drink.
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.Water.#ctor">
+            <summary>
+            Creates a basic cup of water that is size small and no lemon.
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Drinks.Water.AddLemon">
+            <summary>
+            Adds a lemon for a nice refreshing drink.
+            </summary>
+        </member>
         <member name="T:DinoDiner.Menu.Entrees.Brontowurst">
             <summary>
             Entree class to hold all the information about the current entree.

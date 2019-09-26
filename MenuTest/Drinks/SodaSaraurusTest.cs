@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * SodaSaraurus.cs
+ * Author: Aidan Smith
+ */
+ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;

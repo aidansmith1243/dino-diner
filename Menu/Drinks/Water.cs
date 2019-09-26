@@ -4,9 +4,15 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// A type of drink that has special ingredients, prices, calories, and methods.
+    /// </summary>
     public class Water: Drink
     {
         private bool lemon;
+        /// <summary>
+        /// Property to add a lemon to the drink.
+        /// </summary>
         public bool Lemon
         {
             get
@@ -19,6 +25,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
         private Size size;
+        /// <summary>
+        /// Property to get and set the size of the drink and change the price and calories accordingly
+        /// </summary>
         public override Size Size
         {
             get
@@ -32,6 +41,9 @@ namespace DinoDiner.Menu.Drinks
                 Calories = 0;
             }
         }
+        /// <summary>
+        /// Property that gives the ingredients of the current drink.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -42,12 +54,18 @@ namespace DinoDiner.Menu.Drinks
                 return ingredients;
             }
         }
+        /// <summary>
+        /// Creates a basic cup of water that is size small and no lemon.
+        /// </summary>
         public Water()
         {
             Size = Size.Small;
             Lemon = false;
 
         }
+        /// <summary>
+        /// Adds a lemon for a nice refreshing drink.
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;

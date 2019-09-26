@@ -1,12 +1,22 @@
-﻿using System;
+﻿/*
+ * JurassicJava.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// A type of drink that has special ingredients, prices, calories, and methods.
+    /// </summary>
     public class JurassicJava: Drink
     {
         private bool roomForCream;
+        /// <summary>
+        /// Property to say if the person wants to add cream on the java
+        /// </summary>
         public bool RoomForCream
         {
             get
@@ -19,6 +29,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
         private bool decaf;
+        /// <summary>
+        /// Property to say if the customer wants their java decaf.
+        /// </summary>
         public bool Decaf
         {
             get
@@ -31,6 +44,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
         private Size size;
+        /// <summary>
+        /// Property to get and set the size of the drink and change the price and calories accordingly
+        /// </summary>
         public override Size Size
         {
             get
@@ -57,6 +73,9 @@ namespace DinoDiner.Menu.Drinks
                 }
             }
         }
+        /// <summary>
+        /// Property that gives the ingredients of the current drink.
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -67,6 +86,9 @@ namespace DinoDiner.Menu.Drinks
                 return ingredients;
             }
         }
+        /// <summary>
+        /// Create the coffee ith default size small, no ice, no room for cream, and not decaf
+        /// </summary>
         public JurassicJava()
         {
             Size = Size.Small;
@@ -74,10 +96,16 @@ namespace DinoDiner.Menu.Drinks
             Decaf = false;
             Ice = false;
         }
+        /// <summary>
+        /// Sets RoomForCream to true
+        /// </summary>
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
         }
+        /// <summary>
+        /// Puts ice in the drink.
+        /// </summary>
         public void AddIce()
         {
             Ice = true;
