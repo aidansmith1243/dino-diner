@@ -6,54 +6,123 @@ using DinoDiner.Menu.Drinks;
 
 namespace MenuTest.Drinks
 {
-    public class SodaSaraurusTest
+    public class SodasaurusTest
     {
         // The correct default calories
         [Fact]
         public void HasCorrectDefaultCalories()
         {
-            SodaSaraurus soda = new SodaSaraurus();
+            Sodasaurus soda = new Sodasaurus();
             Assert.Equal<uint>(112, soda.Calories);
         }
         // The correct default price
         [Fact]
         public void HasCorrectDefaultPrice()
         {
-            SodaSaraurus soda = new SodaSaraurus();
+            Sodasaurus soda = new Sodasaurus();
             Assert.Equal<double>(1.50, soda.Price);
         }
         // The correct default ice
         [Fact]
         public void HasCorrectDefaultIce()
         {
-            SodaSaraurus soda = new SodaSaraurus();
+            Sodasaurus soda = new Sodasaurus();
             Assert.True(soda.Ice);
         }
         // The correct default size
         [Fact]
         public void HasCorrectDefaultSize()
         {
-            SodaSaraurus soda = new SodaSaraurus();
+            Sodasaurus soda = new Sodasaurus();
             Assert.Equal<Size>(Size.Small, soda.Size);
         }
 
+        [Fact]
+        public void HasCorrectMediumSize()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Medium;
+            Assert.Equal<Size>(Size.Medium, soda.Size);
+        }
+        [Fact]
+        public void HasCorrectLargeSize()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Large;
+            Assert.Equal<Size>(Size.Large, soda.Size);
+        }
         // correct calories after setting small
         [Fact]
         public void CorrectCaloriesAfterSettingSmall()
         {
-            SodaSaraurus soda = new SodaSaraurus();
+            Sodasaurus soda = new Sodasaurus();
             soda.Size = Size.Large;
             soda.Size = Size.Small;
             Assert.Equal<uint>(112, soda.Calories);
         }
         // correct price after setting small
-
+        [Fact]
+        public void CorrectPriceAfterSettingSmall()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Large;
+            soda.Size = Size.Small;
+            Assert.Equal<double>(1.5, soda.Price);
+        }
         // correct calories after setting medium
+        [Fact]
+        public void CorrectCaloriesAfterSettingMedium()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Large;
+            soda.Size = Size.Medium;
+            Assert.Equal<uint>(156, soda.Calories);
+        }
         // correct price after setting medium
-
+        [Fact]
+        public void CorrectPriceAfterSettingMedium()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Large;
+            soda.Size = Size.Small;
+            Assert.Equal<double>(2.00, soda.Price);
+        }
         // correct calories after setting large
+        [Fact]
+        public void CorrectCaloriesAfterSettingLarge()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Medium;
+            soda.Size = Size.Large;
+            Assert.Equal<uint>(208, soda.Calories);
+        }
         // correct price after setting large
+        [Fact]
+        public void CorrectPriceAfterSettingLarge()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Medium;
+            soda.Size = Size.Large;
+            Assert.Equal<double>(2.50, soda.Price);
+        }
 
         // testing ice property
+        [Fact]
+        public void CorrectIce()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.HoldIce();
+            Assert.False(soda.Ice);
+        }
+        //Test the ingredients
+        [Fact]
+        public void CorrectIngredients()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            List<string> ingre = soda.Ingredients;
+            Assert.Contains<string>("Water",ingre);
+            Assert.Contains<string>("Natural Flavors", ingre);
+            Assert.Contains<string>("Cane Sugar", ingre);
+        }
     }
 }
