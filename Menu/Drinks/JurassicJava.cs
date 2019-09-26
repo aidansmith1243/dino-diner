@@ -23,7 +23,7 @@ namespace DinoDiner.Menu.Drinks
         {
             get
             {
-                return Decaf;
+                return this.decaf;
             }
             set
             {

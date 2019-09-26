@@ -84,7 +84,7 @@ namespace MenuTest.Drinks
         {
             Sodasaurus soda = new Sodasaurus();
             soda.Size = Size.Large;
-            soda.Size = Size.Small;
+            soda.Size = Size.Medium;
             Assert.Equal<double>(2.00, soda.Price);
         }
         // correct calories after setting large
@@ -123,6 +123,38 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Water",ingre);
             Assert.Contains<string>("Natural Flavors", ingre);
             Assert.Contains<string>("Cane Sugar", ingre);
+            Assert.Equal<int>(3,ingre.Count);
+        }
+        [Fact]
+        public void CorrectFlavor()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Flavor = Flavor.Cherry;
+            Assert.Equal<Flavor>(Flavor.Cherry, soda.Flavor);
+
+            soda = new Sodasaurus();
+            soda.Flavor = Flavor.Chocolate;
+            Assert.Equal<Flavor>(Flavor.Chocolate, soda.Flavor);
+
+            soda = new Sodasaurus();
+            soda.Flavor = Flavor.Cola;
+            Assert.Equal<Flavor>(Flavor.Cola, soda.Flavor);
+
+            soda = new Sodasaurus();
+            soda.Flavor = Flavor.Lime;
+            Assert.Equal<Flavor>(Flavor.Lime, soda.Flavor);
+
+            soda = new Sodasaurus();
+            soda.Flavor = Flavor.Orange;
+            Assert.Equal<Flavor>(Flavor.Orange, soda.Flavor);
+
+            soda = new Sodasaurus();
+            soda.Flavor = Flavor.RootBeer;
+            Assert.Equal<Flavor>(Flavor.RootBeer, soda.Flavor);
+
+            soda = new Sodasaurus();
+            soda.Flavor = Flavor.Vanilla;
+            Assert.Equal<Flavor>(Flavor.Vanilla, soda.Flavor);
         }
     }
 }

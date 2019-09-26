@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Drinks
         Vanilla,
         Chocolate,
         RootBeer,
-        Cheery,
+        Cherry,
         Lime
     }
 }
