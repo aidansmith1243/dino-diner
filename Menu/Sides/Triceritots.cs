@@ -70,5 +70,13 @@ namespace DinoDiner.Menu
             Price = 0.99;
 
         }
+        /// <summary>
+        /// Gives a string description of this side.
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            return Size + " Triceritots";
+        }
     }
 }

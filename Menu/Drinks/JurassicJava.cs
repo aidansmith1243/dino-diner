@@ -110,5 +110,15 @@ namespace DinoDiner.Menu
         {
             Ice = true;
         }
+        /// <summary>
+        /// Says what type of drink this is.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string str = "Jurassic Java";
+            if (Decaf) str = "Decaf " + str;
+            return Size + " " + str;
+        }
     }
 }

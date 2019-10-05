@@ -103,5 +103,15 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
         }
+        /// <summary>
+        /// Gives a string description of this drink.
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            string str = "Tyrannotea";
+            if (Sweet) str = "Sweet " + str;
+            return Size + " " + str;
+        }
     }
 }

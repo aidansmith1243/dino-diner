@@ -110,5 +110,13 @@ namespace DinoDiner.Menu
         {
             this.mayo = false;
         }
+        /// <summary>
+        /// Gives a string description of this entree.
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
+        }
     }
 }

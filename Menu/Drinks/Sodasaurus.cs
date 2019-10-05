@@ -77,5 +77,14 @@ namespace DinoDiner.Menu
             Flavor = SodasaurusFlavor.Cola;
 
         }
+        /// <summary>
+        /// Gives a string description of this drink.
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            
+            return Size + " " + Flavor + " Sodasaurus";
+        }
     }
 }
