@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A type of drink that has special ingredients, prices, calories, and methods.
@@ -10,11 +10,11 @@ namespace DinoDiner.Menu.Drinks
     public class Sodasaurus: Drink
     {
         private Size size;
-        private Flavor flavor;
+        private SodasaurusFlavor flavor;
         /// <summary>
         /// Property to change the flavor of the soda.
         /// </summary>
-        public Flavor Flavor
+        public SodasaurusFlavor Flavor
         {
             get
             {
@@ -74,7 +74,7 @@ namespace DinoDiner.Menu.Drinks
         public Sodasaurus()
         {
             Size = Size.Small;
-            Flavor = Flavor.Cola;
+            Flavor = SodasaurusFlavor.Cola;
 
         }
     }

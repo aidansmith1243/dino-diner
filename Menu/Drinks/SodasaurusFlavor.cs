@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Holds all of the Flavorins for the sodas.
     /// </summary>
-    public enum Flavor
+    public enum SodasaurusFlavor
     {
         /// <summary>
         /// Cola variety of flavor
