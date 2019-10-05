@@ -29,7 +29,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Base class for all of the drink classes to hold the basics of all of the drinks.
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink:IMenuItem
     {
         /// <summary>
         /// Holds the list of ingredients that are contained in the drink.

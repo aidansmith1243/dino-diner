@@ -30,7 +30,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Abstract side class to hold properties for price, ingredients, calories, and ingredients.
     /// </summary>
-    public abstract class Side
+    public abstract class Side: IMenuItem
     {
         /// <summary>
         /// Gets and sets the price

@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// abstract class to store the ingredients, price, and calories for an entree.
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree:IMenuItem
     {
         /// <summary>
         /// Gets the ingredients list
