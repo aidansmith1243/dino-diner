@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * CretaceousCombo.cs
+ * Author: Nathan Bean
+ * Modified by: Aidan Smith
+ */
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing a combo meal
     /// </summary>
-    public class CretaceousCombo
+    public class CretaceousCombo: IMenuItem
     {
         // Backing Variables
         private Size size;
