@@ -9,6 +9,60 @@
       Title="SideSelection">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width=".75*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">Side</TextBlock>
+        <Button Grid.Row="1">
+            <Grid>
+                <Image Source="Assets/DinoDiner-08.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Fryceritops
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="2">
+            <Grid>
+                <Image Source="Assets/DinoDiner-10.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Mezzorella Sticks
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="1">
+            <Grid>
+                <Image Source="Assets/DinoDiner-09.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Meteor Mac &amp; Cheese
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2">
+            <Grid>
+                <Image Source="Assets/DinoDiner-11.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Triceritots
+                </TextBlock>
+            </Grid>
+        </Button>
+        <TextBlock Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">Size</TextBlock>
+        <Grid Grid.Column="3" Grid.Row="1" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Click="SizeSelect" Grid.Row="0" Name="Small">Small</Button>
+            <Button Click="SizeSelect" Grid.Row="1" Name="Medium">Medium</Button>
+            <Button Click="SizeSelect" Grid.Row="2" Name="Large">Large</Button>
+        </Grid>
     </Grid>
 </Page>

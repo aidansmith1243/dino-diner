@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* SideSelection.xaml.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,25 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        /// <summary>
+        /// Constructor to initialize components
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// Used to make the size buttons into radio buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SizeSelect(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            Large.Background = Brushes.LightGray;
+            Medium.Background = Brushes.LightGray;
+            Small.Background = Brushes.LightGray;
+            btn.Background = Brushes.Gray;
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* EntreeSelection.xaml.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,21 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        /// <summary>
+        /// Constructor to initialize components
+        /// </summary>
         public EntreeSelection()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// TODO add to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void EntreeSelect(object sender, RoutedEventArgs args)
+        {
+            
         }
     }
 }

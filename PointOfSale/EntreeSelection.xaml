@@ -9,6 +9,71 @@
       Title="EntreeSelection">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Click="EntreeSelect" Grid.Row="0" Grid.Column="0">
+            <Grid>
+                <Image Source="Assets/DinoDiner-01.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Brontowurst
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Click="EntreeSelect" Grid.Row="0" Grid.Column="1">
+            <Grid>
+                <Image Source="Assets/DinoDiner-02.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Dino-Nuggets
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Click="EntreeSelect" Grid.Row="0" Grid.Column="2">
+            <Grid>
+                <Image Source="Assets/DinoDiner-03.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Prehistoric PB&amp;J
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="0">
+            <Grid>
+                <Image Source="Assets/DinoDiner-04.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Pterodactyl Wings
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Image Source="Assets/DinoDiner-05.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Steakosaurus Burger
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="2">
+            <Grid>
+                <Image Source="Assets/DinoDiner-06.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    T-Rex King Burger
+                </TextBlock>
+            </Grid>
+        </Button>
+        <Button Click="EntreeSelect" Grid.Row="2" Grid.Column="0">
+            <Grid>
+                <Image Source="Assets/DinoDiner-07.png"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    Veloci-Wrap
+                </TextBlock>
+            </Grid>
+        </Button>
     </Grid>
 </Page>
