@@ -7,32 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ComboSelection">
-    <!--
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="150"/>
-                <Setter Property="Height" Value="150"/>
-            </Style>
-        </WrapPanel.Resources>
-        <Button>
-            <StackPanel>
-                <Image Source="Assets/DinoDiner-01.png"/>
-                <TextBlock>Brontowurst Combo</TextBlock>
-            </StackPanel>
-        </Button>
-        <Button>
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-02.png"/>
-            </Button.Background>
-            <TextBlock VerticalAlignment="Bottom">Dino-Nuggets Combo</TextBlock>
-        </Button>
-        <Button>Prehistoric PB&amp;J Combo</Button>
-        <Button>Pterodactyl Wings Combo</Button>
-        <Button>Steakosaurus Burger Combo</Button>
-        <Button>T-Rex King Burger Combo</Button>
-        <Button>Veloci-Wrap Combo</Button>
-    </WrapPanel>-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -44,7 +18,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Click="ComboSelect" Grid.Row="0" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-01.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -52,7 +26,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Grid.Row="0" Grid.Column="1">
+        <Button Click="ComboSelect" Grid.Row="0" Grid.Column="1">
             <Grid>
                 <Image Source="Assets/DinoDiner-02.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -60,7 +34,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Grid.Row="0" Grid.Column="2">
+        <Button Click="ComboSelect" Grid.Row="0" Grid.Column="2">
             <Grid>
                 <Image Source="Assets/DinoDiner-03.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -68,7 +42,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Grid.Row="1" Grid.Column="0">
+        <Button Click="ComboSelect" Grid.Row="1" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-04.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -76,7 +50,7 @@
                 </TextBlock>
             </Grid>
             </Button>
-        <Button Grid.Row="1" Grid.Column="1">
+        <Button Click="ComboSelect" Grid.Row="1" Grid.Column="1">
             <Grid>
                 <Image Source="Assets/DinoDiner-05.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -84,7 +58,7 @@
                 </TextBlock>
             </Grid>
             </Button>
-        <Button Grid.Row="1" Grid.Column="2">
+        <Button Click="ComboSelect" Grid.Row="1" Grid.Column="2">
             <Grid>
                 <Image Source="Assets/DinoDiner-06.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -92,7 +66,7 @@
                 </TextBlock>
             </Grid>
             </Button>
-        <Button Grid.Row="2" Grid.Column="0">
+        <Button Click="ComboSelect" Grid.Row="2" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-07.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">

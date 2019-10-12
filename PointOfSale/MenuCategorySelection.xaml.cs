@@ -1,4 +1,4 @@
-﻿/* MenuCategorySelection.xaml
+﻿/* MenuCategorySelection.xaml.cs
  * Author: Aida Smith
  */
 using System;
