@@ -19,5 +19,13 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <Button>Cherry</Button>
+        <Button Grid.Column="1">Chocolate</Button>
+        <Button Grid.Column="2">Cola</Button>
+        <Button Grid.Row="1" Grid.Column="0">Lime</Button>
+        <Button Grid.Row="1" Grid.Column="1">Orange</Button>
+        <Button Grid.Row="1" Grid.Column="2">Root Beer</Button>
+        <Button Grid.Row="2" Grid.Column="0">Vanilla</Button>
     </Grid>
 </Page>
