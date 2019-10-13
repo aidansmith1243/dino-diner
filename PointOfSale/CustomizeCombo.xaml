@@ -1,4 +1,8 @@
-﻿<Page x:Class="PointOfSale.CustomizeCombo"
+﻿<!--
+    CustomizeCombo.xaml
+    Author: Aidan Smith
+    -->
+<Page x:Class="PointOfSale.CustomizeCombo"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,6 +23,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         
+        <!--Side and Drink buttons-->
         <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Side</TextBlock>
         <Button Click="SideSelect" Grid.Column="0" Grid.Row="1">
             <Grid>
@@ -39,6 +44,7 @@
             </Grid>
         </Button>
         
+        <!--Grid for the size buttons-->
         <Grid Grid.Row="2" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

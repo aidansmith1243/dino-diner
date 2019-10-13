@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * MainWindow.xaml.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +24,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Constructor for the main window
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

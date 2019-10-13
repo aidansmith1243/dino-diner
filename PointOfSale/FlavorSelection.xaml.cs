@@ -30,5 +30,14 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Continue after any of the flavors are selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void EntreeSelect(object sender, RoutedEventArgs args)
+        {
+
+        }
     }
 }

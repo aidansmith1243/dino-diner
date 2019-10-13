@@ -1,4 +1,8 @@
-﻿<Page x:Class="PointOfSale.ComboSelection"
+﻿<!--
+    ComboSelection.xaml
+    Author: Aidan Smith
+    -->
+    <Page x:Class="PointOfSale.ComboSelection"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -18,6 +22,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        <!--All Combo Buttons-->
         <Button Click="ComboSelect" Grid.Row="0" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-01.png"/>

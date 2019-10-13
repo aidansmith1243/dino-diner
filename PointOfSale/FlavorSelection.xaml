@@ -1,4 +1,8 @@
-﻿<Page x:Class="PointOfSale.FlavorSelection"
+﻿<!--
+    FlavorSelection.xaml
+    Author: Aidan Smith
+    -->
+<Page x:Class="PointOfSale.FlavorSelection"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,13 +23,14 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
+        
+        <!--All of the flavor buttons-->
         <Button>Cherry</Button>
-        <Button Grid.Column="1">Chocolate</Button>
-        <Button Grid.Column="2">Cola</Button>
-        <Button Grid.Row="1" Grid.Column="0">Lime</Button>
-        <Button Grid.Row="1" Grid.Column="1">Orange</Button>
-        <Button Grid.Row="1" Grid.Column="2">Root Beer</Button>
-        <Button Grid.Row="2" Grid.Column="0">Vanilla</Button>
+        <Button Click="EntreeSelect" Grid.Column="1">Chocolate</Button>
+        <Button Click="EntreeSelect" Grid.Column="2">Cola</Button>
+        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="0">Lime</Button>
+        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="1">Orange</Button>
+        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="2">Root Beer</Button>
+        <Button Click="EntreeSelect" Grid.Row="2" Grid.Column="0">Vanilla</Button>
     </Grid>
 </Page>

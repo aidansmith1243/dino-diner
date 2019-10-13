@@ -1,4 +1,8 @@
-﻿<Page x:Class="PointOfSale.MenuCategorySelection"
+﻿<!--
+    MenuCategorySelection.xaml
+    Author: Aidan Smith
+    -->
+<Page x:Class="PointOfSale.MenuCategorySelection"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,6 +21,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <!--Main Window Buttons-->
         <Button Click="ComboSelect" Grid.Row="0" Grid.Column="0">Combos</Button>
         <Button Click="EntreeSelect" Grid.Row="0" Grid.Column="1">Entrees</Button>
         <Button Click="SideSelect" Grid.Row="1" Grid.Column="0">Sides</Button>

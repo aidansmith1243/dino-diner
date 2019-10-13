@@ -1,4 +1,8 @@
-﻿<Page x:Class="PointOfSale.SideSelection"
+﻿<!--
+    SideSelection.xaml
+    Author: Aidan Smith
+    -->
+<Page x:Class="PointOfSale.SideSelection"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,7 +23,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
+        
+        <!--All of the side buttons-->
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">Side</TextBlock>
         <Button Grid.Row="1">
             <Grid>
@@ -53,6 +58,8 @@
                 </TextBlock>
             </Grid>
         </Button>
+        
+        <!--All of the side size buttons and labels-->
         <TextBlock Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">Size</TextBlock>
         <Grid Grid.Column="3" Grid.Row="1" Grid.RowSpan="3">
             <Grid.RowDefinitions>
