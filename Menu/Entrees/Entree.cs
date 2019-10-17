@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// abstract class to store the ingredients, price, and calories for an entree.
     /// </summary>
-    public abstract class Entree:IMenuItem
+    public abstract class Entree: IMenuItem//, IOrderItem
     {
         /// <summary>
         /// Gets the ingredients list
@@ -24,5 +24,16 @@ namespace DinoDiner.Menu
         /// Gets and sets the calories
         /// </summary>
         public uint Calories { get; set; }
+
+        /// <summary>
+        /// Gets the description
+        /// </summary>
+        public string Description { get { return this.ToString(); } }
+
+        /// <summary>
+        /// Gives the special methods for each seperate class
+        /// </summary>
+        //public virtual string[] Special { get { return new List<string>().ToArray(); } }
+
     }
 }

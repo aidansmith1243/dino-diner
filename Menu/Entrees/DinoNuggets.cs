@@ -4,15 +4,25 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Entree class to hold all the information about the current entree.
     /// </summary>
-    public class DinoNuggets: Entree
+    public class DinoNuggets: Entree, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Store the number of nuggets in this order
+        /// </summary>
         private uint nuggets = 6;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Adds all of the ingredients to the list.
@@ -28,6 +38,17 @@ namespace DinoDiner.Menu
                     ingredients.Add("Chicken Nugget");
                 }
                 return ingredients;
+            }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (nuggets > 6)
+                    special.Add($"{nuggets - 6} Extra Nuggets");
+                return special.ToArray();
             }
         }
 
@@ -48,6 +69,10 @@ namespace DinoDiner.Menu
             this.nuggets++;
             this.Price += 0.25;
             this.Calories += 59;
+            NotifyOfPropertyChanged("Price");
+            NotifyOfPropertyChanged("Calories");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ingredients");
         }
         /// <summary>
         /// Gives a string description of this entree.

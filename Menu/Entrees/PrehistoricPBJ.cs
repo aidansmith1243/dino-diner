@@ -9,7 +9,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Entree class to hold all the information about the current entree.
     /// </summary>
-    public class PrehistoricPBJ:Entree
+    public class PrehistoricPBJ: Entree
     {
         private bool peanutButter = true;
         private bool jelly = true;
@@ -26,6 +26,16 @@ namespace DinoDiner.Menu
                 if (peanutButter) ingredients.Add("Peanut Butter");
                 if (jelly) ingredients.Add("Jelly");
                 return ingredients;
+            }
+        }
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if(!peanutButter) special.Add("Hold Peanut Butter");
+                if (!jelly) special.Add("Hold Jelly");
+                return special.ToArray();
             }
         }
 
