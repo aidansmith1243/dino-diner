@@ -29,7 +29,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Base class for all of the drink classes to hold the basics of all of the drinks.
     /// </summary>
-    public abstract class Drink:IMenuItem
+    public abstract class Drink: IMenuItem, IOrderItem
     {
         /// <summary>
         /// Holds the list of ingredients that are contained in the drink.
@@ -57,6 +57,27 @@ namespace DinoDiner.Menu
         public virtual void HoldIce()
         {
             Ice = false;
+        }
+        /// <summary>
+        /// Gives a description of the drink
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        /// <summary>
+        /// Gives anything special needed for the drink
+        /// </summary>
+        public virtual string[] Special
+        {
+            get
+            {
+                string[] arr = {"Hold Ice"};
+                return arr;
+            }
         }
 
 

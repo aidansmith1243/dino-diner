@@ -9,7 +9,13 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Sodasaurus: Drink
     {
+        /// <summary>
+        /// Backing variable
+        /// </summary>
         private Size size;
+        /// <summary>
+        /// Backing variable
+        /// </summary>
         private SodasaurusFlavor flavor;
         /// <summary>
         /// Property to change the flavor of the soda.

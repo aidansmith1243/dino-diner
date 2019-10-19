@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Water.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,6 +12,9 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Water: Drink
     {
+        /// <summary>
+        /// Backing variable
+        /// </summary>
         private bool lemon;
         /// <summary>
         /// Property to add a lemon to the drink.
@@ -24,6 +30,9 @@ namespace DinoDiner.Menu
                 this.lemon = value;
             }
         }
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private Size size;
         /// <summary>
         /// Property to get and set the size of the drink and change the price and calories accordingly
@@ -77,6 +86,17 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return Size + " Water";
+        }
+        /// <summary>
+        /// Anything Special for this drink.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                string[] arr = { "Hold Ice", "Add Lemon" };
+                return arr;
+            }
         }
     }
 }

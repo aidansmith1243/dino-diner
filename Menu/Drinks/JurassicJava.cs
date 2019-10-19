@@ -13,6 +13,9 @@ namespace DinoDiner.Menu
     /// </summary>
     public class JurassicJava: Drink
     {
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool roomForCream;
         /// <summary>
         /// Property to say if the person wants to add cream on the java
@@ -28,6 +31,9 @@ namespace DinoDiner.Menu
                 this.roomForCream = value;
             }
         }
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool decaf;
         /// <summary>
         /// Property to say if the customer wants their java decaf.
@@ -43,6 +49,9 @@ namespace DinoDiner.Menu
                 this.decaf = value;
             }
         }
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private Size size;
         /// <summary>
         /// Property to get and set the size of the drink and change the price and calories accordingly
@@ -119,6 +128,17 @@ namespace DinoDiner.Menu
             string str = "Jurassic Java";
             if (Decaf) str = "Decaf " + str;
             return Size + " " + str;
+        }
+        /// <summary>
+        /// Anything Special for this drink.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                string[] arr = { "Add Ice", "Leave Room For Cream" };
+                return arr;
+            }
         }
     }
 }

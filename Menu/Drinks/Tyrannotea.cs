@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Tyrannotea.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,7 +12,13 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Tyrannotea: Drink
     {
+        /// <summary>
+        /// Backing variable
+        /// </summary>
         private Size size;
+        /// <summary>
+        /// backing variable
+        /// </summary>
         private bool sweet;
         /// <summary>
         /// Property to set if the customer wants sweet tea.
@@ -26,6 +35,9 @@ namespace DinoDiner.Menu
                 Size = this.Size; // used to update Calorie count
             }
         }
+        /// <summary>
+        /// Backing variable
+        /// </summary>
         private bool lemon;
         /// <summary>
         /// Property to add a lemon to the drink.
@@ -112,6 +124,17 @@ namespace DinoDiner.Menu
             string str = "Tyrannotea";
             if (Sweet) str = "Sweet " + str;
             return Size + " " + str;
+        }
+        /// <summary>
+        /// Anything Special for this drink.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                string[] arr = { "Hold Ice", "Add Lemon" };
+                return arr;
+            }
         }
     }
 }
