@@ -12,9 +12,21 @@ namespace DinoDiner.Menu
     /// </summary>
     public class SteakosaurusBurger: Entree
     {
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool bun = true;
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool pickle = true;
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool ketchup = true;
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool mustard = true;
 
         /// <summary>
@@ -33,7 +45,21 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Gives special info about this item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!pickle) special.Add("Hold Pickle");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                return special.ToArray();
+            }
+        }
         /// <summary>
         /// Constructor to initiate the price and calories.
         /// </summary>

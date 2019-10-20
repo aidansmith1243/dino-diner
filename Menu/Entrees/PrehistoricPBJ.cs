@@ -11,7 +11,13 @@ namespace DinoDiner.Menu
     /// </summary>
     public class PrehistoricPBJ: Entree
     {
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool peanutButter = true;
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool jelly = true;
 
         /// <summary>
@@ -28,7 +34,10 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-        public string[] Special
+        /// <summary>
+        /// Gives special info about this item
+        /// </summary>
+        public override string[] Special
         {
             get
             {

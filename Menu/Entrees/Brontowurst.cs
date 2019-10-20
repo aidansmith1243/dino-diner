@@ -13,8 +13,17 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Brontowurst: Entree
     {
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool peppers = true;
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool onion = true;
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool bun = true;
 
         /// <summary>
@@ -30,6 +39,20 @@ namespace DinoDiner.Menu
                 if (onion) ingredients.Add("Onion");
                 if (peppers) ingredients.Add("Peppers");
                 return ingredients;
+            }
+        }
+        /// <summary>
+        /// Gives special info about this item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!peppers) special.Add("Hold Peppers");
+                if (!onion) special.Add("Hold Onion");
+                return special.ToArray();
             }
         }
         /// <summary>

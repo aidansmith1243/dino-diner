@@ -12,9 +12,19 @@ namespace DinoDiner.Menu
     /// </summary>
     public class VelociWrap: Entree
     {
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool dressing = true;
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool lettuce = true;
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private bool cheese = true;
+
 
         /// <summary>
         /// Adds all of the ingredients to the list.
@@ -31,7 +41,20 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Gives special info about this item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!dressing) special.Add("Hold Dresssing");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!cheese) special.Add("Hold Cheese");
+                return special.ToArray();
+            }
+        }
         /// <summary>
         /// Constructor to initiate the price and calories.
         /// </summary>

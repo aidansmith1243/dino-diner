@@ -40,8 +40,10 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
-
-        public string[] Special
+        /// <summary>
+        /// Gives special info about this item.
+        /// </summary>
+        public override string[] Special
         {
             get
             {
