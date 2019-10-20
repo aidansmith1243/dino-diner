@@ -132,8 +132,10 @@ namespace DinoDiner.Menu
         {
             get
             {
-                string[] arr = { "Hold Ice", "Add Lemon" };
-                return arr;
+                List<string> special = new List<string>();
+                if(!Ice)special.Add("Hold Ice");
+                if(Lemon) special.Add("Add Lemon");
+                return special.ToArray();
             }
         }
     }
