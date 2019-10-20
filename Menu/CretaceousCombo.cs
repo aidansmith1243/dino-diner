@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class representing a combo meal
     /// </summary>
-    public class CretaceousCombo: IMenuItem
+    public class CretaceousCombo: IMenuItem, IOrderItem
     {
         // Backing Variables
         private Size size;
@@ -81,8 +81,24 @@ namespace DinoDiner.Menu
                 return ingredients;
             }
         }
+        /// <summary>
+        /// Gives all the special requirements for this item
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                special.AddRange(Entree.Special);
+                special.Add(Side.Description);
+                special.AddRange(Side.Special);
+                special.Add(Drink.Description);
+                special.AddRange(Drink.Special);
 
-        
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// Constructs a new combo with the specified entree
         /// </summary>
@@ -98,6 +114,16 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return Entree.ToString() + " Combo";
+        }
+        /// <summary>
+        /// Gives a description of this item
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
         }
     }
 }
