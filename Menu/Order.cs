@@ -14,10 +14,27 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Order
     {
+
+        public Order()
+        {
+            items = new ObservableCollection<IOrderItem>();
+            salesTaxRate = 0.15;
+        }
+        private ObservableCollection<IOrderItem> items;
         /// <summary>
         /// List to hold all of the items in the order.
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        public ObservableCollection<IOrderItem> Items 
+        {
+            get 
+            {
+                return items;
+            } 
+            set 
+            {
+                items = value;
+            }
+        }
         /// <summary>
         /// Calculates the total price from the price of all the items.
         /// </summary>
@@ -30,13 +47,19 @@ namespace DinoDiner.Menu
                 {
                     cost += i.Price;
                 }
+                if (cost < 0)
+                    return 0;
                 return cost;
             }
         }
         /// <summary>
-        /// Gives the sales tax rate.
+        /// Backing variable
         /// </summary>
-        public double SalesTaxRate { get; protected set; }
+        private double salesTaxRate;
+        /// <summary>
+        /// Gives the sales tax rate. You never said what you wanted for default sales tax
+        /// </summary>
+        public double SalesTaxRate { get { return salesTaxRate; } protected set { salesTaxRate = value; } }
         /// <summary>
         /// Calculates the cost from the sales tax
         /// </summary>
