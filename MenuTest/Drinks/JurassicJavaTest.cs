@@ -76,5 +76,29 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Coffee", ingre);
             Assert.Equal<int>(2, ingre.Count);
         }
+
+        [Fact]
+        public void IndividualSpecialTests()
+        {
+            JurassicJava addIce = new JurassicJava();
+            addIce.AddIce();
+            Assert.Contains("Add Ice", addIce.Special);
+            Assert.Single(addIce.Special);
+            JurassicJava cream = new JurassicJava();
+            cream.LeaveRoomForCream();
+            Assert.Contains("Leave Room For Cream", cream.Special);
+            Assert.Single(cream.Special);
+        }
+        [Fact]
+        public void MultipleSpecialTest()
+        {
+            JurassicJava j = new JurassicJava();
+            j.AddIce();
+            j.LeaveRoomForCream();
+            Assert.Contains("Add Ice", j.Special);
+            Assert.Contains("Leave Room For Cream", j.Special);
+            string[] arr = j.Special;
+            Assert.Equal<int>(2, arr.Length);
+        }
     }
 }

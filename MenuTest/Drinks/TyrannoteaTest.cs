@@ -111,5 +111,30 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Lemon", ingre);
             Assert.Equal<int>(4, ingre.Count);
         }
+
+        [Fact]
+        public void IndividualSpecialTest()
+        {
+            Tyrannotea addLemon = new Tyrannotea();
+            addLemon.AddLemon();
+            Assert.Contains("Add Lemon", addLemon.Special);
+            Assert.Single(addLemon.Special);
+            Tyrannotea noIce = new Tyrannotea();
+            noIce.HoldIce();
+            Assert.Contains("Hold Ice", noIce.Special);
+            Assert.Single(noIce.Special);
+        }
+
+        [Fact]
+        public void MultipleSpecialTest()
+        {
+            Tyrannotea t = new Tyrannotea();
+            t.HoldIce();
+            t.AddLemon();
+            Assert.Contains("Add Lemon", t.Special);
+            Assert.Contains("Hold Ice", t.Special);
+            string[] arr = t.Special;
+            Assert.Equal<int>(2,arr.Length);
+        }
     }
 }

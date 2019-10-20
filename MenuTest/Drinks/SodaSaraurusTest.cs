@@ -160,5 +160,14 @@ namespace MenuTest.Drinks
             soda.Flavor = SodasaurusFlavor.Vanilla;
             Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Vanilla, soda.Flavor);
         }
+
+        [Fact]
+        public void SpecialTest()
+        {
+            Sodasaurus s = new Sodasaurus();
+            s.HoldIce();
+            Assert.Contains("Hold Ice", s.Special);
+            Assert.Single(s.Special);
+        }
     }
 }
