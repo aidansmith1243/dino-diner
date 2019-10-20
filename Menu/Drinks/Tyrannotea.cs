@@ -33,6 +33,9 @@ namespace DinoDiner.Menu
             {
                 this.sweet = value;
                 Size = this.Size; // used to update Calorie count
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Special");
             }
         }
         /// <summary>
@@ -51,6 +54,8 @@ namespace DinoDiner.Menu
             set
             {
                 this.lemon = value;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
             }
         }
         /// <summary>
@@ -81,6 +86,10 @@ namespace DinoDiner.Menu
                         break;
                 }
                 if (Sweet) Calories *= 2;
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
         /// <summary>
@@ -114,6 +123,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            // Notify is in property
         }
         /// <summary>
         /// Gives a string description of this drink.

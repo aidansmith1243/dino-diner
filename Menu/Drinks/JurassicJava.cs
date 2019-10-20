@@ -29,6 +29,7 @@ namespace DinoDiner.Menu
             set
             {
                 this.roomForCream = value;
+                NotifyOfPropertyChanged("RoomForCream");
             }
         }
         /// <summary>
@@ -47,6 +48,8 @@ namespace DinoDiner.Menu
             set
             {
                 this.decaf = value;
+                NotifyOfPropertyChanged("Decaf");
+                NotifyOfPropertyChanged("Description");
             }
         }
         /// <summary>
@@ -80,6 +83,10 @@ namespace DinoDiner.Menu
                         Calories = 8;
                         break;
                 }
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
         /// <summary>
@@ -111,6 +118,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            // property change in Property code
         }
         /// <summary>
         /// Puts ice in the drink.
@@ -118,6 +126,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChanged("Ice");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Says what type of drink this is.

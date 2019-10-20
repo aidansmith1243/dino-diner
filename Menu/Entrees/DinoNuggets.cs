@@ -18,12 +18,6 @@ namespace DinoDiner.Menu
         /// </summary>
         private uint nuggets = 6;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         /// <summary>
         /// Adds all of the ingredients to the list.
         /// <return>A list of strings with all of the ingredients included</return>

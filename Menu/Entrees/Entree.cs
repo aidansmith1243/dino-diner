@@ -4,13 +4,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// abstract class to store the ingredients, price, and calories for an entree.
     /// </summary>
-    public abstract class Entree: IMenuItem, IOrderItem
+    public abstract class Entree: IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets the ingredients list
@@ -40,6 +41,18 @@ namespace DinoDiner.Menu
                 string[] arr = { };
                 return arr; 
             } 
+        }
+        /// <summary>
+        /// event for when a property is changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Helper method for event when a property is changed
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
     }

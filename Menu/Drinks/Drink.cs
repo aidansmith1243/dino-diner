@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -29,7 +30,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Base class for all of the drink classes to hold the basics of all of the drinks.
     /// </summary>
-    public abstract class Drink: IMenuItem, IOrderItem
+    public abstract class Drink: IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Holds the list of ingredients that are contained in the drink.
@@ -57,6 +58,8 @@ namespace DinoDiner.Menu
         public virtual void HoldIce()
         {
             Ice = false;
+            NotifyOfPropertyChanged("Ice");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Gives a description of the drink
@@ -80,7 +83,18 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
-
+        /// <summary>
+        /// event for when a property is changed
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Helper method for event when a property is changed
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
     }
 }

@@ -28,6 +28,8 @@ namespace DinoDiner.Menu
             set
             {
                 this.lemon = value;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
             }
         }
         /// <summary>
@@ -48,6 +50,8 @@ namespace DinoDiner.Menu
                 this.size = value;
                 Price = 0.10;
                 Calories = 0;
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Description");
             }
         }
         /// <summary>
@@ -78,6 +82,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            // Notify is in the property value
         }
         /// <summary>
         /// Gives a string description of this drink.
