@@ -106,7 +106,74 @@ namespace MenuTest.Entrees
             trex.HoldMayo();
             Assert.DoesNotContain<string>("Mayo", trex.Ingredients);
         }
+        [Fact]
+        public void IndividualSpecialTest()
+        {
+            TRexKingBurger bun = new TRexKingBurger();
+            bun.HoldBun();
+            Assert.Contains("Hold Bun", bun.Special);
+            Assert.Single(bun.Special);
 
+            TRexKingBurger lettuce = new TRexKingBurger();
+            lettuce.HoldLettuce();
+            Assert.Contains("Hold Lettuce", lettuce.Special);
+            Assert.Single(lettuce.Special);
+
+            TRexKingBurger tomato = new TRexKingBurger();
+            tomato.HoldTomato();
+            Assert.Contains("Hold Tomato", tomato.Special);
+            Assert.Single(tomato.Special);
+
+            TRexKingBurger onion = new TRexKingBurger();
+            onion.HoldOnion();
+            Assert.Contains("Hold Onion", onion.Special);
+            Assert.Single(onion.Special);
+
+            TRexKingBurger pickle = new TRexKingBurger();
+            pickle.HoldPickle();
+            Assert.Contains("Hold Pickle", pickle.Special);
+            Assert.Single(pickle.Special);
+
+            TRexKingBurger ketchup = new TRexKingBurger();
+            ketchup.HoldKetchup();
+            Assert.Contains("Hold Ketchup", ketchup.Special);
+            Assert.Single(ketchup.Special);
+
+            TRexKingBurger mustard = new TRexKingBurger();
+            mustard.HoldMustard();
+            Assert.Contains("Hold Mustard", mustard.Special);
+            Assert.Single(mustard.Special);
+
+            TRexKingBurger mayo = new TRexKingBurger();
+            mayo.HoldMayo();
+            Assert.Contains("Hold Mayo", mayo.Special);
+            Assert.Single(mayo.Special);
+
+        }
+
+        [Fact]
+        public void MultipleSpecialTest()
+        {
+            TRexKingBurger x = new TRexKingBurger();
+            x.HoldMustard();
+            x.HoldBun();
+            x.HoldKetchup();
+            x.HoldLettuce();
+            x.HoldMayo();
+            x.HoldOnion();
+            x.HoldPickle();
+            x.HoldTomato();
+            Assert.Contains("Hold Mayo", x.Special);
+            Assert.Contains("Hold Mustard", x.Special);
+            Assert.Contains("Hold Ketchup", x.Special);
+            Assert.Contains("Hold Pickle", x.Special);
+            Assert.Contains("Hold Onion", x.Special);
+            Assert.Contains("Hold Tomato", x.Special);
+            Assert.Contains("Hold Lettuce", x.Special);
+            Assert.Contains("Hold Bun", x.Special);
+            string[] arr = x.Special;
+            Assert.Equal<int>(8, arr.Length);
+        }
     }
 
 }

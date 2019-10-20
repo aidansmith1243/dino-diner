@@ -64,6 +64,46 @@ namespace MenuTest.Entrees
             sb.HoldMustard();
             Assert.DoesNotContain<string>("Mustard", sb.Ingredients);
         }
+        [Fact]
+        public void IndividualSpecialTest()
+        {
+            SteakosaurusBurger bun = new SteakosaurusBurger();
+            bun.HoldBun();
+            Assert.Contains("Hold Bun", bun.Special);
+            Assert.Single(bun.Special);
+
+            SteakosaurusBurger pickle = new SteakosaurusBurger();
+            pickle.HoldPickle();
+            Assert.Contains("Hold Pickle", pickle.Special);
+            Assert.Single(pickle.Special);
+
+            SteakosaurusBurger ketchup = new SteakosaurusBurger();
+            ketchup.HoldKetchup();
+            Assert.Contains("Hold Ketchup", ketchup.Special);
+            Assert.Single(ketchup.Special);
+
+            SteakosaurusBurger mustard = new SteakosaurusBurger();
+            mustard.HoldMustard();
+            Assert.Contains("Hold Mustard", mustard.Special);
+            Assert.Single(mustard.Special);
+
+        }
+
+        [Fact]
+        public void MultipleSpecialTest()
+        {
+            SteakosaurusBurger v = new SteakosaurusBurger();
+            v.HoldBun();
+            v.HoldKetchup();
+            v.HoldMustard();
+            v.HoldPickle();
+            Assert.Contains("Hold Bun", v.Special);
+            Assert.Contains("Hold Ketchup", v.Special);
+            Assert.Contains("Hold Pickle", v.Special);
+            Assert.Contains("Hold Mustard", v.Special);
+            string[] arr = v.Special;
+            Assert.Equal<int>(4, arr.Length);
+        }
     }
 
 }

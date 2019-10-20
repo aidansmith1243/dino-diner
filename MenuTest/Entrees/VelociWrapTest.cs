@@ -56,5 +56,38 @@ namespace MenuTest.Entrees
             vw.HoldCheese();
             Assert.DoesNotContain<string>("Parmesan Cheese", vw.Ingredients);
         }
+        [Fact]
+        public void IndividualSpecialTest()
+        {
+            VelociWrap dressing = new VelociWrap();
+            dressing.HoldDressing();
+            Assert.Contains("Hold Dressing", dressing.Special);
+            Assert.Single(dressing.Special);
+
+            VelociWrap lettuce = new VelociWrap();
+            lettuce.HoldLettuce();
+            Assert.Contains("Hold Lettuce", lettuce.Special);
+            Assert.Single(lettuce.Special);
+
+            VelociWrap cheese = new VelociWrap();
+            cheese.HoldCheese();
+            Assert.Contains("Hold Cheese", cheese.Special);
+            Assert.Single(cheese.Special);
+
+        }
+
+        [Fact]
+        public void MultipleSpecialTest()
+        {
+            VelociWrap v = new VelociWrap();
+            v.HoldDressing();
+            v.HoldLettuce();
+            v.HoldCheese();
+            Assert.Contains("Hold Dressing", v.Special);
+            Assert.Contains("Hold Lettuce", v.Special);
+            Assert.Contains("Hold Cheese", v.Special);
+            string[] arr = v.Special;
+            Assert.Equal<int>(3, arr.Length);
+        }
     }
 }

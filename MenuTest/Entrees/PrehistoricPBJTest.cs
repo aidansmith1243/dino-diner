@@ -53,6 +53,33 @@ namespace MenuTest.Entrees
             PrehistoricPBJ pbj = new PrehistoricPBJ();
             Assert.Equal("Prehistoric PB&J", pbj.Description);
         }
+
+        [Fact]
+        public void IndividualSpecialTest()
+        {
+            PrehistoricPBJ pb = new PrehistoricPBJ();
+            pb.HoldPeanutButter();
+            Assert.Contains("Hold Peanut Butter", pb.Special);
+            Assert.Single(pb.Special);
+
+            PrehistoricPBJ jelly = new PrehistoricPBJ();
+            jelly.HoldJelly();
+            Assert.Contains("Hold Jelly", jelly.Special);
+            Assert.Single(jelly.Special);
+
+        }
+
+        [Fact]
+        public void MultipleSpecialTest()
+        {
+            PrehistoricPBJ v = new PrehistoricPBJ();
+            v.HoldPeanutButter();
+            v.HoldJelly();
+            Assert.Contains("Hold Peanut Butter", v.Special);
+            Assert.Contains("Hold Jelly", v.Special);
+            string[] arr = v.Special;
+            Assert.Equal<int>(2, arr.Length);
+        }
     }
 
 }
