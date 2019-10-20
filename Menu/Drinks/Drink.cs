@@ -61,7 +61,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gives a description of the drink
         /// </summary>
-        public string Description
+        public virtual string Description
         {
             get
             {

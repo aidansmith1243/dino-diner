@@ -12,6 +12,9 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Fryceritops : Side
     {
+        /// <summary>
+        /// Backing Variable
+        /// </summary>
         private Size size;
         /// <summary>
         /// Will set the size and adjust the price and calories.
