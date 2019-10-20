@@ -104,5 +104,24 @@ namespace MenuTest.Drinks
             string[] arr = w.Special;
             Assert.Equal<int>(2,arr.Length);
         }
+        [Theory]
+        [InlineData("Special")]
+        public void HoldingItemsShouldNotifyOfPropertyChange(string s)
+        {
+            Water dn = new Water();
+            Assert.PropertyChanged(dn, s, () => { dn.HoldIce(); });
+            Assert.PropertyChanged(dn, s, () => { dn.AddLemon(); });
+        }
+        [Theory]
+        [InlineData("Description")]
+        [InlineData("Size")]
+        public void ChangingSizeShouldNotifyOfPropertyChange(string s)
+        {
+            Water w = new Water();
+            
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Medium; });
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Large; });
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Small; });
+        }
     }
 }

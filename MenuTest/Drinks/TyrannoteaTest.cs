@@ -136,5 +136,36 @@ namespace MenuTest.Drinks
             string[] arr = t.Special;
             Assert.Equal<int>(2,arr.Length);
         }
+        [Theory]
+        [InlineData("Special")]
+        public void HoldingItemsShouldNotifyOfPropertyChange(string s)
+        {
+            Tyrannotea dn = new Tyrannotea();
+            Assert.PropertyChanged(dn, s, () => { dn.HoldIce(); });
+            Assert.PropertyChanged(dn, s, () => { dn.AddLemon(); });
+        }
+        [Theory]
+        [InlineData("Special")]
+        [InlineData("Ingredients")]
+        [InlineData("Description")]
+        public void MakingSweetShouldNotifyOfPropertyChange(string s)
+        {
+            Tyrannotea dn = new Tyrannotea();
+            Assert.PropertyChanged(dn, s, () => { dn.Sweet = true; });
+        }
+
+        [Theory]
+        [InlineData("Description")]
+        [InlineData("Size")]
+        [InlineData("Price")]
+        [InlineData("Calories")]
+        public void ChangingSizeShouldNotifyOfPropertyChange(string s)
+        {
+            Tyrannotea w = new Tyrannotea();
+
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Medium; });
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Large; });
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Small; });
+        }
     }
 }

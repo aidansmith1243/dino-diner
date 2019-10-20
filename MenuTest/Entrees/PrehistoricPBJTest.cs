@@ -80,6 +80,15 @@ namespace MenuTest.Entrees
             string[] arr = v.Special;
             Assert.Equal<int>(2, arr.Length);
         }
+        [Theory]
+        [InlineData("Special")]
+        [InlineData("Ingredients")]
+        public void HoldingItemsShouldNotifyOfPropertyChange(string s)
+        {
+            PrehistoricPBJ dn = new PrehistoricPBJ();
+            Assert.PropertyChanged(dn, s, () => { dn.HoldJelly(); });
+            Assert.PropertyChanged(dn, s, () => { dn.HoldPeanutButter(); });
+        }
     }
 
 }

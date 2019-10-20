@@ -169,5 +169,35 @@ namespace MenuTest.Drinks
             Assert.Contains("Hold Ice", s.Special);
             Assert.Single(s.Special);
         }
+
+        [Theory]
+        [InlineData("Special")]
+        public void HoldingItemsShouldNotifyOfPropertyChange(string s)
+        {
+            Sodasaurus dn = new Sodasaurus();
+            Assert.PropertyChanged(dn, s, () => { dn.HoldIce(); });
+        }
+        [Theory]
+        [InlineData("Flavor")]
+        [InlineData("Description")]
+        public void ChangeFlavorShouldNotifyOfPropertyChange(string s)
+        {
+            Sodasaurus dn = new Sodasaurus();
+            Assert.PropertyChanged(dn, s, () => { dn.Flavor = SodasaurusFlavor.Cherry; });
+        }
+
+        [Theory]
+        [InlineData("Description")]
+        [InlineData("Size")]
+        [InlineData("Price")]
+        [InlineData("Calories")]
+        public void ChangingSizeShouldNotifyOfPropertyChange(string s)
+        {
+            Sodasaurus w = new Sodasaurus();
+
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Medium; });
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Large; });
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Small; });
+        }
     }
 }

@@ -100,5 +100,34 @@ namespace MenuTest.Drinks
             string[] arr = j.Special;
             Assert.Equal<int>(2, arr.Length);
         }
+        [Theory]
+        [InlineData("Special")]
+        public void HoldingItemsShouldNotifyOfPropertyChange(string s)
+        {
+            JurassicJava dn = new JurassicJava();
+            Assert.PropertyChanged(dn, s, () => { dn.AddIce(); });
+        }
+        [Theory]
+        [InlineData("Decaf")]
+        [InlineData("Description")]
+        public void MakingDecafShouldNotifyOfPropertyChange(string s)
+        {
+            JurassicJava dn = new JurassicJava();
+            Assert.PropertyChanged(dn, s, () => { dn.Decaf = true; });
+        }
+
+        [Theory]
+        [InlineData("Description")]
+        [InlineData("Size")]
+        [InlineData("Price")]
+        [InlineData("Calories")]
+        public void ChangingSizeShouldNotifyOfPropertyChange(string s)
+        {
+            JurassicJava w = new JurassicJava();
+
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Medium; });
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Large; });
+            Assert.PropertyChanged(w, s, () => { w.Size = Size.Small; });
+        }
     }
 }

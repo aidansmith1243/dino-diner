@@ -104,6 +104,18 @@ namespace MenuTest.Entrees
             string[] arr = v.Special;
             Assert.Equal<int>(4, arr.Length);
         }
+        [Theory]
+        [InlineData("Special")]
+        [InlineData("Ingredients")]
+        public void HoldingItemsShouldNotifyOfPropertyChange(string s)
+        {
+            SteakosaurusBurger dn = new SteakosaurusBurger();
+            Assert.PropertyChanged(dn, s, () => { dn.HoldBun(); });
+            Assert.PropertyChanged(dn, s, () => { dn.HoldKetchup(); });
+            Assert.PropertyChanged(dn, s, () => { dn.HoldMustard(); });
+            Assert.PropertyChanged(dn, s, () => { dn.HoldPickle(); });
+
+        }
     }
 
 }
