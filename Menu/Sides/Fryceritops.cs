@@ -74,7 +74,6 @@ namespace DinoDiner.Menu
         {
             Calories = 222;
             Price = 0.99;
-
         }
         /// <summary>
         /// Gives a string description of this side.

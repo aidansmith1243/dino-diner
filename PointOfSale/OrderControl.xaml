@@ -27,15 +27,28 @@
                    Margin="5,0,0,0"/>
         <ListBox Grid.Row="1"
                  Grid.ColumnSpan="2"
-                 ItemsSource="{Binding Path=Items}"
-                 IsSynchronizedWithCurrentItem="True">
+                 Name ="OrderItems"
+                 ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
+                 SelectionChanged="OnSelectionChanged"
+                 IsSynchronizedWithCurrentItem="True"
+                 DataContextChanged="OnDataContextChanged">
+
             <ListBox.ItemTemplate>
                 <DataTemplate>
+
                     <StackPanel>
-                        <TextBlock Text="{Binding Path=Description}"/>
-                        <ListBox ItemsSource="{Binding Path=Special}"
+                        <Grid MinWidth="180">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <Button Grid.Column="1" Click="OnRemoveOrderItem">X</Button>
+                        </Grid>
+                    <ListBox ItemsSource="{Binding Path=Special}"
                                  BorderThickness="0"/>
-                    </StackPanel>
+
+                    </StackPanel> 
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

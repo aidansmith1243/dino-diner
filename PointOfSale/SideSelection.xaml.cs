@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using DinoDiner.Menu;
 
 namespace PointOfSale
@@ -22,7 +23,7 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for SideSelection.xaml
     /// </summary>
-    public partial class SideSelection : Page
+    public partial class SideSelection : Page 
     {
         /// <summary>
         /// Constructor to initialize components
@@ -30,6 +31,11 @@ namespace PointOfSale
         public SideSelection()
         {
             InitializeComponent();
+        }
+        public SideSelection(Side side)
+        {
+            InitializeComponent();
+            DataContext = side;
         }
         /// <summary>
         /// Used to make the size buttons into radio buttons
