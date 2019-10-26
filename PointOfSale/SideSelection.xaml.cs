@@ -44,12 +44,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void SizeSelect(object sender, RoutedEventArgs e)
         {
+            
             Button btn = (Button)sender;
-            Large.Background = Brushes.LightGray;
+            /*Large.Background = Brushes.LightGray;
             Medium.Background = Brushes.LightGray;
             Small.Background = Brushes.LightGray;
             btn.Background = Brushes.Gray;
-
+            */
             if (DataContext is Order order)
             {
                 if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is  Side side)

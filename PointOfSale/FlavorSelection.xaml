@@ -25,12 +25,12 @@
         </Grid.RowDefinitions>
         
         <!--All of the flavor buttons-->
-        <Button>Cherry</Button>
-        <Button Click="EntreeSelect" Grid.Column="1">Chocolate</Button>
-        <Button Click="EntreeSelect" Grid.Column="2">Cola</Button>
-        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="0">Lime</Button>
-        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="1">Orange</Button>
-        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="2">Root Beer</Button>
-        <Button Click="EntreeSelect" Grid.Row="2" Grid.Column="0">Vanilla</Button>
+        <Button Click="CherrySelect">Cherry</Button>
+        <Button Click="ChocolateSelect" Grid.Column="1">Chocolate</Button>
+        <Button Click="ColaSelect" Grid.Column="2">Cola</Button>
+        <Button Click="LimeSelect" Grid.Row="1" Grid.Column="0">Lime</Button>
+        <Button Click="OrangeSelect" Grid.Row="1" Grid.Column="1">Orange</Button>
+        <Button Click="RootSelect" Grid.Row="1" Grid.Column="2">Root Beer</Button>
+        <Button Click="VanillaSelect" Grid.Row="2" Grid.Column="0">Vanilla</Button>
     </Grid>
 </Page>
