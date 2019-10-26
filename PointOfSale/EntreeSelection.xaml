@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
         
         <!--All of the entree buttons-->
-        <Button Click="EntreeSelect" Grid.Row="0" Grid.Column="0">
+        <Button Click="BrontowurstSelect" Grid.Row="0" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-01.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -33,7 +33,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="EntreeSelect" Grid.Row="0" Grid.Column="1">
+        <Button Click="DinoNuggetSelect" Grid.Row="0" Grid.Column="1">
             <Grid>
                 <Image Source="Assets/DinoDiner-02.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -41,7 +41,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="EntreeSelect" Grid.Row="0" Grid.Column="2">
+        <Button Click="PrehistoricPBJSelect" Grid.Row="0" Grid.Column="2">
             <Grid>
                 <Image Source="Assets/DinoDiner-03.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -49,7 +49,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="0">
+        <Button Click="PterodactylwingsSelect" Grid.Row="1" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-04.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -57,7 +57,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="1">
+        <Button Click="SteakosaurusBugerSelect" Grid.Row="1" Grid.Column="1">
             <Grid>
                 <Image Source="Assets/DinoDiner-05.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -65,7 +65,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="EntreeSelect" Grid.Row="1" Grid.Column="2">
+        <Button Click="TRexKingBurgerSelect" Grid.Row="1" Grid.Column="2">
             <Grid>
                 <Image Source="Assets/DinoDiner-06.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -73,7 +73,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="EntreeSelect" Grid.Row="2" Grid.Column="0">
+        <Button Click="VelociwrapSelect" Grid.Row="2" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-07.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
