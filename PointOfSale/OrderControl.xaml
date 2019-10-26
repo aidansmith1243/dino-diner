@@ -52,7 +52,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock Text="$"
+        <TextBlock Text="Subtotal: $"
                    Grid.Row="2"
                    TextAlignment="Right"
                    FontWeight="Bold"/>

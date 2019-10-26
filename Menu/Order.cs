@@ -75,7 +75,10 @@ namespace DinoDiner.Menu
         public void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
         {
             NotifyOfPropertyChanged("SubtotalCost");
+            NotifyOfPropertyChanged("TotalCost");
+            NotifyOfPropertyChanged("SalesTaxCost");
         }
+
         /// <summary>
         /// event for when a property is changed
         /// </summary>

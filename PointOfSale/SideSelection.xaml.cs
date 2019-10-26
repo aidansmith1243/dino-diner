@@ -66,6 +66,7 @@ namespace PointOfSale
                             break;
                 }
             }
+            NavigationService.Navigate(new MenuCategorySelection());
 
         }
         /// <summary>
@@ -78,6 +79,51 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new Fryceritops();
+                order.Items.Add(s);
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+            }
+
+        }
+        /// <summary>
+        /// Adds side to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddMeteorMacCheese(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                Side s = new MeteorMacAndCheese();
+                order.Items.Add(s);
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+            }
+
+        }
+        /// <summary>
+        /// Adds side to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddMezzorellaSticks(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                Side s = new MezzorellaSticks();
+                order.Items.Add(s);
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+            }
+
+        }
+        /// <summary>
+        /// Adds side to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddTricertots(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                Side s = new Triceritots();
                 order.Items.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }

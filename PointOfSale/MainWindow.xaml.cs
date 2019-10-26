@@ -32,7 +32,7 @@ namespace PointOfSale
         {
             InitializeComponent();
 
-            // Test order stuff
+            /*// Test order stuff
             Order order = DataContext as Order;
             if (order != null)
             {
@@ -45,7 +45,7 @@ namespace PointOfSale
                 sb.HoldBun();
                 sb.HoldMustard();
                 order.Items.Add(sb);
-            }
+            }*/
         }
 
         private void PassOnDataContext()
