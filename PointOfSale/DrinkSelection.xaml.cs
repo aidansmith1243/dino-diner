@@ -213,5 +213,14 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// Move to the menu selection screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void DoneSelect(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }

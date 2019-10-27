@@ -57,11 +57,21 @@
                 </TextBlock>
             </Grid>
         </Button>
+        <Grid Grid.Column="3" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--Special Buttons with different actions-->
+            <Button Click="SpecialSelect" Grid.Row="0" Visibility="Hidden" Name="Special">Special</Button>
+            <Button Click="AddLemon" Grid.Row="1" Visibility="Hidden" Name="Lemon">Add Lemon</Button>
+            <Button Click="ChangeIce" Grid.Row="2" Visibility="Visible" Name="Ice">Hold Ice</Button>
+            <Button Click="DoneSelect" Grid.Row="3">Done</Button>
+        </Grid>
         
-        <!--Special Buttons with different actions-->
-        <Button Click="SpecialSelect" Grid.Column="3" Grid.Row="0" Visibility="Hidden" Name="Special">Special</Button>
-        <Button Click="AddLemon" Grid.Column="3" Grid.Row="1" Visibility="Hidden" Name="Lemon">Add Lemon</Button>
-        <Button Click="ChangeIce" Grid.Column="3" Grid.Row="2" Visibility="Visible" Name="Ice">Hold Ice</Button>
+        
         
         <!--Grid for the size buttons-->
         <Grid Grid.Row="2" Grid.ColumnSpan="2">
