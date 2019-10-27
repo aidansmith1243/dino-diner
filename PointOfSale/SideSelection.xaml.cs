@@ -3,6 +3,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace PointOfSale
         public SideSelection(Side side)
         {
             InitializeComponent();
-            DataContext = side;
+           // DataContext = side;
         }
         /// <summary>
         /// Used to make the size buttons into radio buttons
@@ -46,6 +47,7 @@ namespace PointOfSale
         {
             
             Button btn = (Button)sender;
+            
             /*Large.Background = Brushes.LightGray;
             Medium.Background = Brushes.LightGray;
             Small.Background = Brushes.LightGray;
@@ -66,6 +68,7 @@ namespace PointOfSale
                             side.Size = DinoDiner.Menu.Size.Large;
                             break;
                 }
+                order.OnCollectionChanged(null, null);
             }
             NavigationService.Navigate(new MenuCategorySelection());
 
@@ -130,5 +133,6 @@ namespace PointOfSale
             }
 
         }
+        
     }
 }
