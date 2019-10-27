@@ -66,10 +66,12 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Button Click="SizeSelect" Grid.Row="0" Name="Small">Small</Button>
             <Button Click="SizeSelect" Grid.Row="1" Name="Medium">Medium</Button>
             <Button Click="SizeSelect" Grid.Row="2" Name="Large">Large</Button>
+            <Button Grid.Row= "3" Click= "DoneSelected" >Done</Button>
         </Grid>
     </Grid>
 </Page>

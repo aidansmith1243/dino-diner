@@ -10,7 +10,7 @@
         xmlns:local="clr-namespace:PointOfSale"
         xmlns:menu="clr-namespace:DinoDiner.Menu;assembly=Menu"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Dino-Diner" Height="450" Width="800">
     <Window.DataContext>
         <menu:Order/>
     </Window.DataContext>
@@ -22,6 +22,7 @@
         <Frame Name="OrderUI" 
                Source="MenuCategorySelection.xaml"
                LoadCompleted="OnLoadCompleted"
-               DataContextChanged="OnDataContextChanged"/>
+               DataContextChanged="OnDataContextChanged"
+               NavigationUIVisibility="Hidden"/>
     </DockPanel>
 </Window>
