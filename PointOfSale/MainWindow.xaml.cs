@@ -34,7 +34,9 @@ namespace PointOfSale
             OrderControl.NavigationService = OrderUI.NavigationService;
 
         }
-
+        /// <summary>
+        /// Passes on the data context to new pages
+        /// </summary>
         private void PassOnDataContext()
         {
             Page page = OrderUI.Content as Page;
@@ -44,11 +46,20 @@ namespace PointOfSale
             }
             
         }
-
+        /// <summary>
+        /// Passes on the datacontext when screen is loaded.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
             PassOnDataContext();
         }
+        /// <summary>
+        /// passes on the changes to the datacontext
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             PassOnDataContext();

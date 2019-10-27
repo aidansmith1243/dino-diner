@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* OrderControl.xaml.cs
+ * Author: Aidan Smith
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,11 +24,22 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public OrderControl()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// The navigation service to control
+        /// </summary>
         public NavigationService NavigationService { get; set; }
+        /// <summary>
+        /// Removes an item from the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void OnRemoveOrderItem(object sender, EventArgs args)
         {
             if (DataContext is Order order)
@@ -33,6 +47,11 @@ namespace PointOfSale
                     if (element.DataContext is IOrderItem item)
                         order.Items.Remove(item);
         }
+        /// <summary>
+        /// Runs when an item is selected in the order box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void OnSelectionChanged(object sender, EventArgs args)
         {
             if(OrderItems.SelectedItem is Side side)
@@ -40,12 +59,21 @@ namespace PointOfSale
                 NavigationService.Navigate(new SideSelection(side));
             }
         }
+        /// <summary>
+        /// Runs when the cancel button is clicked to remove items and 
+        /// return to menu screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void CancelSelected(object sender, EventArgs args)
         {
             if (DataContext is Order order)
                 order.Items.Clear();
             NavigationService.Navigate(new MenuCategorySelection());
         }
+        /// <summary>
+        /// TODO figure out what this does
+        /// </summary>
         private void MountItemListener()
         {
             if(DataContext is Order order)
@@ -53,10 +81,20 @@ namespace PointOfSale
                 order.Items.CollectionChanged += OnCollectionChanged;
             }
         }
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void OnCollectionChanged(object sender, EventArgs args)
         {
 
         }
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ags"></param>
         public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs ags) { MountItemListener(); }
     }
 }
