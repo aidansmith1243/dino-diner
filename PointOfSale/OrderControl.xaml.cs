@@ -37,8 +37,14 @@ namespace PointOfSale
         {
             if(OrderItems.SelectedItem is Side side)
             {
-                NavigationService?.Navigate(new SideSelection(side));
+                NavigationService.Navigate(new SideSelection(side));
             }
+        }
+        public void CancelSelected(object sender, EventArgs args)
+        {
+            if (DataContext is Order order)
+                order.Items.Clear();
+            NavigationService.Navigate(new MenuCategorySelection());
         }
         private void MountItemListener()
         {

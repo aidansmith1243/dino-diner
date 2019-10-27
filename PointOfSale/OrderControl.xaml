@@ -82,7 +82,7 @@
                    Grid.Column="1"
                    FontWeight="Bold"/>
         </Grid>
-        <Button Grid.Row="4">Cancel</Button>
+        <Button Click="CancelSelected" Grid.Row="4">Cancel</Button>
         <Button Grid.Row="4"
                 Grid.Column="2">Pay</Button>
 

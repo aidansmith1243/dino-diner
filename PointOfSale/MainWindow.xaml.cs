@@ -31,21 +31,8 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            OrderControl.NavigationService = OrderUI.NavigationService;
 
-            /*// Test order stuff
-            Order order = DataContext as Order;
-            if (order != null)
-            {
-                order.Items.Add(new DinoNuggets());
-                order.Items.Add(new Sodasaurus());
-                Triceritots t = new Triceritots();
-                t.Size = DinoDiner.Menu.Size.Large;
-                order.Items.Add(t);
-                SteakosaurusBurger sb = new SteakosaurusBurger();
-                sb.HoldBun();
-                sb.HoldMustard();
-                order.Items.Add(sb);
-            }*/
         }
 
         private void PassOnDataContext()
@@ -55,6 +42,7 @@ namespace PointOfSale
             {
                 page.DataContext = OrderUI.DataContext;
             }
+            
         }
 
         public void OnLoadCompleted(object sender, NavigationEventArgs args)
