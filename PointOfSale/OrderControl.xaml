@@ -45,8 +45,10 @@
                             <TextBlock Text="{Binding Path=Description}"/>
                             <Button Grid.Column="1" Click="OnRemoveOrderItem">X</Button>
                         </Grid>
-                    <ListBox ItemsSource="{Binding Path=Special}"
-                                 BorderThickness="0"/>
+                    <!--<ListBox ItemsSource="{Binding Path=Special}"
+                                 BorderThickness="0"/>-->
+                        <ItemsControl ItemsSource="{Binding Path=Special}"
+                                 BorderThickness="0" Margin="20,0,0,0"/>
 
                     </StackPanel> 
                 </DataTemplate>
