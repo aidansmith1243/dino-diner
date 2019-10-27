@@ -58,6 +58,10 @@ namespace PointOfSale
             {
                 NavigationService.Navigate(new SideSelection(side));
             }
+            if (OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService.Navigate(new DrinkSelection(drink));
+            }
         }
         /// <summary>
         /// Runs when the cancel button is clicked to remove items and 

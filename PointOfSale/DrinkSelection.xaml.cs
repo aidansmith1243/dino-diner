@@ -31,6 +31,32 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        public DrinkSelection(Drink drink)
+        {
+            InitializeComponent();
+
+            if(drink is Tyrannotea t)
+            {
+                TyrannoteaSelect(null, null);
+            }
+            if (drink is Water w)
+            {
+                WaterSelect(null, null);
+            }
+            if (drink is JurassicJava j)
+            {
+                JurrassicJavaSelect(null, null);
+            }
+            if (drink is Sodasaurus s)
+            {
+                SodasaurusSelect(null, null);
+            }
+            TyrannoteaBtn.IsEnabled = false;
+            SodasaurusBtn.IsEnabled = false;
+            JurassicBtn.IsEnabled = false;
+            WaterBtn.IsEnabled = false;
+
+        }
         /// <summary>
         /// Used for when the soda is selected and allows flavor to be visible
         /// </summary>

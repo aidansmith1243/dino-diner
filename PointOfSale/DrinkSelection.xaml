@@ -25,7 +25,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <!--All of the drink selections-->
-        <Button Click="SodasaurusSelect" Grid.Column="0" Grid.Row="0">
+        <Button Click="SodasaurusSelect" Grid.Column="0" Grid.Row="0" Name="SodasaurusBtn">
             <Grid>
                 <Image Source="Assets/DinoDiner-14.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -33,7 +33,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="TyrannoteaSelect" Grid.Column="1" Grid.Row="0">
+        <Button Click="TyrannoteaSelect" Grid.Column="1" Grid.Row="0" Name="TyrannoteaBtn">
             <Grid>
                 <Image Source="Assets/DinoDiner-12.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -41,7 +41,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="JurrassicJavaSelect" Grid.Column="0" Grid.Row="1">
+        <Button Click="JurrassicJavaSelect" Grid.Column="0" Grid.Row="1" Name="JurassicBtn">
             <Grid>
                 <Image Source="Assets/DinoDiner-13.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -49,7 +49,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="WaterSelect" Grid.Column="1" Grid.Row="1">
+        <Button Click="WaterSelect" Grid.Column="1" Grid.Row="1" Name="WaterBtn">
             <Grid>
                 <Image Source="Assets/DinoDiner-15.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">

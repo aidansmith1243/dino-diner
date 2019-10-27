@@ -26,7 +26,7 @@
         
         <!--All of the side buttons-->
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">Side</TextBlock>
-        <Button Click="AddFryceritops" Grid.Row="1">
+        <Button Click="AddFryceritops" Grid.Row="1" Name="FryceritopsBtn">
             <Grid>
                 <Image Source="Assets/DinoDiner-08.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -34,7 +34,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="AddMezzorellaSticks" Grid.Row="2">
+        <Button Click="AddMezzorellaSticks" Grid.Row="2" Name="MezzorellaBtn">
             <Grid>
                 <Image Source="Assets/DinoDiner-10.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -42,7 +42,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click ="AddMeteorMacCheese" Grid.Column="1" Grid.Row="1">
+        <Button Click ="AddMeteorMacCheese" Grid.Column="1" Grid.Row="1" Name="MeteorBtn">
             <Grid>
                 <Image Source="Assets/DinoDiner-09.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
@@ -50,7 +50,7 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="AddTricertots" Grid.Column="1" Grid.Row="2">
+        <Button Click="AddTricertots" Grid.Column="1" Grid.Row="2" Name="TriceritotsBtn">
             <Grid>
                 <Image Source="Assets/DinoDiner-11.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">

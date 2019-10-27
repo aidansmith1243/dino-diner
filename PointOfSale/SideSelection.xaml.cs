@@ -36,7 +36,11 @@ namespace PointOfSale
         public SideSelection(Side side)
         {
             InitializeComponent();
-           // DataContext = side;
+            //DataContext = side;
+            MeteorBtn.IsEnabled = false;
+            MezzorellaBtn.IsEnabled = false;
+            FryceritopsBtn.IsEnabled = false;
+            TriceritotsBtn.IsEnabled = false;
         }
         /// <summary>
         /// Used to make the size buttons into radio buttons
