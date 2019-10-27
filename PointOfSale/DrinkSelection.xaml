@@ -66,8 +66,9 @@
             </Grid.RowDefinitions>
             <!--Special Buttons with different actions-->
             <Button Click="SpecialSelect" Grid.Row="0" Visibility="Hidden" Name="Special">Special</Button>
-            <Button Click="AddLemon" Grid.Row="1" Visibility="Hidden" Name="Lemon">Add Lemon</Button>
-            <Button Click="ChangeIce" Grid.Row="2" Visibility="Visible" Name="Ice">Hold Ice</Button>
+            <!--<Button Click="AddLemon" Grid.Row="1" Visibility="Hidden" Name="Lemon">Add Lemon</Button>-->
+            <Button Click="SpecialSelect2" Grid.Row="1" Visibility="Hidden" Name="Special2">Add Lemon</Button>
+            <Button Click="ChangeIce" Grid.Row="2" Visibility="Hidden" Name="Ice">Hold Ice</Button>
             <Button Click="DoneSelect" Grid.Row="3">Done</Button>
         </Grid>
         

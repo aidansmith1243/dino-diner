@@ -30,6 +30,7 @@ namespace DinoDiner.Menu
             {
                 this.roomForCream = value;
                 NotifyOfPropertyChanged("RoomForCream");
+                NotifyOfPropertyChanged("Special");
             }
         }
         /// <summary>

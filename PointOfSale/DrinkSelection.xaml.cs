@@ -40,8 +40,9 @@ namespace PointOfSale
         {
             Special.Content = "Flavor";
             Special.Visibility = Visibility.Visible;
-            Lemon.Visibility = Visibility.Hidden;
+            Special2.Visibility = Visibility.Hidden;
             Ice.Content = "Hold Ice";
+            Ice.Visibility = Visibility.Visible;
             if (DataContext is Order order)
             {
                 Drink s = new Sodasaurus();
@@ -57,8 +58,12 @@ namespace PointOfSale
         public void WaterSelect(object sender, RoutedEventArgs args)
         {
             Special.Visibility = Visibility.Hidden;
-            Lemon.Visibility = Visibility.Visible;
+            Special2.Content = "Add Lemon";
+            Special2.Visibility = Visibility.Visible;
+            
             Ice.Content = "Hold Ice";
+            Ice.Visibility = Visibility.Visible;
+
             if (DataContext is Order order)
             {
                 Drink s = new Water();
@@ -75,8 +80,11 @@ namespace PointOfSale
         {
             Special.Content = "Decaf";
             Special.Visibility = Visibility.Visible;
-            Lemon.Visibility = Visibility.Hidden;
+            Special2.Content = "Room for Cream";
+            Special2.Visibility = Visibility.Visible;
+
             Ice.Content = "Add Ice";
+            Ice.Visibility = Visibility.Visible;
             if (DataContext is Order order)
             {
                 Drink s = new JurassicJava();
@@ -93,8 +101,12 @@ namespace PointOfSale
         {
             Special.Content = "Sweet";
             Special.Visibility = Visibility.Visible;
-            Lemon.Visibility = Visibility.Visible;
+            Special2.Content = "Add Lemon";
+            Special2.Visibility = Visibility.Visible;
+            
             Ice.Content = "Hold Ice";
+            Ice.Visibility = Visibility.Visible;
+
             if (DataContext is Order order)
             {
                 Drink s = new Tyrannotea();
@@ -165,6 +177,40 @@ namespace PointOfSale
                     if (DataContext is Order o3)
                         if (CollectionViewSource.GetDefaultView(o3.Items).CurrentItem is Sodasaurus d3)
                             NavigationService.Navigate(new FlavorSelection(d3));
+                    break;
+            }
+        }
+        /// <summary>
+        /// Special button for adding lemon or adding room for cream
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SpecialSelect2(object sender, RoutedEventArgs args)
+        {
+            Button btn = (Button)sender;
+            string name = btn.Content.ToString();
+            switch (name)
+            {
+                case "Add Lemon":
+                    if (DataContext is Order order)
+                    {
+                        if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Tyrannotea drink)
+                        {
+                            drink.AddLemon();
+                        }
+                        if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Water drink2)
+                        {
+                            drink2.AddLemon();
+                        }
+
+                    }
+                    break;
+                case "Room for Cream":
+                    if (DataContext is Order o2)
+                        if (CollectionViewSource.GetDefaultView(o2.Items).CurrentItem is JurassicJava java)
+                        {
+                            java.LeaveRoomForCream();
+                        }
                     break;
             }
         }
