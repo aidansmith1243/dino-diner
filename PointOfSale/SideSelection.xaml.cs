@@ -51,12 +51,7 @@ namespace PointOfSale
         {
             
             Button btn = (Button)sender;
-            
-            /*Large.Background = Brushes.LightGray;
-            Medium.Background = Brushes.LightGray;
-            Small.Background = Brushes.LightGray;
-            btn.Background = Brushes.Gray;
-            */
+
             if (DataContext is Order order)
             {
                 if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is  Side side)
@@ -72,7 +67,7 @@ namespace PointOfSale
                             side.Size = DinoDiner.Menu.Size.Large;
                             break;
                 }
-                order.OnCollectionChanged(null, null);
+                order.OnCollectionChanged(null, null); // Refreshes the price shown on the order
             }
             NavigationService.Navigate(new MenuCategorySelection());
 

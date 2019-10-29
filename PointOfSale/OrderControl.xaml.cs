@@ -56,11 +56,11 @@ namespace PointOfSale
         {
             if(OrderItems.SelectedItem is Side side)
             {
-                NavigationService.Navigate(new SideSelection(side));
+                NavigationService?.Navigate(new SideSelection(side));
             }
             if (OrderItems.SelectedItem is Drink drink)
             {
-                NavigationService.Navigate(new DrinkSelection(drink));
+                NavigationService?.Navigate(new DrinkSelection(drink));
             }
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
                 order.Items.Clear();
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService?.Navigate(new MenuCategorySelection());
         }
         /// <summary>
         /// TODO figure out what this does
