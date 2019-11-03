@@ -58,6 +58,9 @@
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EntreeCustomization.xaml.cs">
+      <DependentUpon>EntreeCustomization.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FlavorSelection.xaml.cs">
       <DependentUpon>FlavorSelection.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DrinkSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntreeCustomization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -50,7 +50,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Brontowurst s = new Brontowurst();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.Navigate(new MenuCategorySelection());
             }
@@ -65,7 +65,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Entree s = new DinoNuggets();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.Navigate(new MenuCategorySelection());
             }
@@ -80,7 +80,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Entree s = new PrehistoricPBJ();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.Navigate(new MenuCategorySelection());
             }
@@ -95,7 +95,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Entree s = new PterodactylWings();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.Navigate(new MenuCategorySelection());
             }
@@ -110,7 +110,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Entree s = new SteakosaurusBurger();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.Navigate(new MenuCategorySelection());
             }
@@ -125,7 +125,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Entree s = new TRexKingBurger();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.Navigate(new MenuCategorySelection());
             }
@@ -140,7 +140,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Entree s = new VelociWrap();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.Navigate(new MenuCategorySelection());
             }

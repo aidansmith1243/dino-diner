@@ -54,7 +54,7 @@ namespace PointOfSale
 
             if (DataContext is Order order)
             {
-                if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is  Side side)
+                if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
                 switch (btn.Name)
                 {
                     case "Small":
@@ -67,7 +67,7 @@ namespace PointOfSale
                             side.Size = DinoDiner.Menu.Size.Large;
                             break;
                 }
-                order.OnCollectionChanged(null, null); // Refreshes the price shown on the order
+                //order.OnCollectionChanged(null, null); // Refreshes the price shown on the order
             }
             NavigationService.Navigate(new MenuCategorySelection());
 
@@ -82,7 +82,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new Fryceritops();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
 
@@ -97,7 +97,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new MeteorMacAndCheese();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
 
@@ -112,8 +112,10 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new MezzorellaSticks();
-                order.Items.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                order.Add(s);
+                //CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentTo(s);
+                Console.WriteLine(CollectionViewSource.GetDefaultView(order.Items).CurrentItem);
             }
 
         }
@@ -127,7 +129,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new Triceritots();
-                order.Items.Add(s);
+                order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
 

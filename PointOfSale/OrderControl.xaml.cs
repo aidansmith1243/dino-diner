@@ -45,7 +45,7 @@ namespace PointOfSale
             if (DataContext is Order order)
                 if (sender is FrameworkElement element)
                     if (element.DataContext is IOrderItem item)
-                        order.Items.Remove(item);
+                        order.Remove(item);
         }
         /// <summary>
         /// Runs when an item is selected in the order box
@@ -57,6 +57,7 @@ namespace PointOfSale
             if(OrderItems.SelectedItem is Side side)
             {
                 NavigationService?.Navigate(new SideSelection(side));
+                
             }
             if (OrderItems.SelectedItem is Drink drink)
             {
@@ -71,8 +72,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void CancelSelected(object sender, EventArgs args)
         {
-            if (DataContext is Order order)
-                order.Items.Clear();
+            if (DataContext is Order order) 
+            {
+                
+            }
+                //order.Items.Clear();
             NavigationService?.Navigate(new MenuCategorySelection());
         }
         /// <summary>
@@ -82,7 +86,8 @@ namespace PointOfSale
         {
             if(DataContext is Order order)
             {
-                order.Items.CollectionChanged += OnCollectionChanged;
+                //order.Items.CollectionChanged += OnCollectionChanged;
+                //order.PropertyChanged += OnCollectionChanged;
             }
         }
         /// <summary>
@@ -92,13 +97,18 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void OnCollectionChanged(object sender, EventArgs args)
         {
-
+            Console.WriteLine("changed data context");
+            
+            //CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
         }
         /// <summary>
         /// TODO
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="ags"></param>
-        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs ags) { MountItemListener(); }
+        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs ags) 
+        { 
+            MountItemListener(); 
+        }
     }
 }
