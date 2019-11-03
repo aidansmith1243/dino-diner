@@ -24,62 +24,62 @@
         </Grid.RowDefinitions>
         
         <!--All Combo Buttons-->
-        <Button Click="ComboSelect" Grid.Row="0" Grid.Column="0">
+        <Button Click="BrontowurstSelect" Grid.Row="0" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-01.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    Brontowurst Combo
+                    Brontowurst
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="ComboSelect" Grid.Row="0" Grid.Column="1">
+        <Button Click="DinoNuggetSelect" Grid.Row="0" Grid.Column="1">
             <Grid>
                 <Image Source="Assets/DinoDiner-02.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    Dino-Nuggets Combo
+                    Dino-Nuggets
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="ComboSelect" Grid.Row="0" Grid.Column="2">
+        <Button Click="PrehistoricPBJSelect" Grid.Row="0" Grid.Column="2">
             <Grid>
                 <Image Source="Assets/DinoDiner-03.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    Prehistoric PB&amp;J Combo
+                    Prehistoric PB&amp;J
                 </TextBlock>
             </Grid>
         </Button>
-        <Button Click="ComboSelect" Grid.Row="1" Grid.Column="0">
+        <Button Click="PterodactylwingsSelect" Grid.Row="1" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-04.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    Pterodactyl Wings Combo
+                    Pterodactyl Wings
                 </TextBlock>
             </Grid>
-            </Button>
-        <Button Click="ComboSelect" Grid.Row="1" Grid.Column="1">
+        </Button>
+        <Button Click="SteakosaurusBugerSelect" Grid.Row="1" Grid.Column="1">
             <Grid>
                 <Image Source="Assets/DinoDiner-05.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    Steakosaurus Burger Combo
+                    Steakosaurus Burger
                 </TextBlock>
             </Grid>
-            </Button>
-        <Button Click="ComboSelect" Grid.Row="1" Grid.Column="2">
+        </Button>
+        <Button Click="TRexKingBurgerSelect" Grid.Row="1" Grid.Column="2">
             <Grid>
                 <Image Source="Assets/DinoDiner-06.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    T-Rex King Burger Combo
+                    T-Rex King Burger
                 </TextBlock>
             </Grid>
-            </Button>
-        <Button Click="ComboSelect" Grid.Row="2" Grid.Column="0">
+        </Button>
+        <Button Click="VelociwrapSelect" Grid.Row="2" Grid.Column="0">
             <Grid>
                 <Image Source="Assets/DinoDiner-07.png"/>
                 <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    Veloci-Wrap Combo
+                    Veloci-Wrap
                 </TextBlock>
             </Grid>
-            </Button>
+        </Button>
         <Button Grid.Column="2" Grid.Row= "2" Click= "DoneSelected" >Done</Button>
     </Grid>
 </Page>

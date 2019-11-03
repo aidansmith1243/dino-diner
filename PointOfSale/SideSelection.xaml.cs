@@ -113,9 +113,7 @@ namespace PointOfSale
             {
                 Side s = new MezzorellaSticks();
                 order.Add(s);
-                //CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentTo(s);
-                Console.WriteLine(CollectionViewSource.GetDefaultView(order.Items).CurrentItem);
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
 
         }

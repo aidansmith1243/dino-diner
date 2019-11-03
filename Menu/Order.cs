@@ -20,11 +20,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// holds the list of items in the order and returns an array of the items.
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { 
-            get {
-                return items; 
-            } 
-        }
+        public ObservableCollection<IOrderItem> Items { get { return items; } }
         /// <summary>
         /// Adds the item to the order and notifies of properties changed
         /// </summary>
@@ -67,7 +63,6 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
-        // end new code
 
         public Order()
         {

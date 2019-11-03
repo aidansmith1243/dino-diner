@@ -74,9 +74,10 @@ namespace PointOfSale
         {
             if (DataContext is Order order) 
             {
-                
+                order.Items.Clear();
+                order.OnCollectionChanged(null,null);
             }
-                //order.Items.Clear();
+               
             NavigationService?.Navigate(new MenuCategorySelection());
         }
         /// <summary>

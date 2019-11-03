@@ -169,7 +169,7 @@ namespace PointOfSale
                             drink.Size = DinoDiner.Menu.Size.Large;
                             break;
                     }
-                order.OnCollectionChanged(null, null);
+                //order.OnCollectionChanged(null, null);
             }
 
         }

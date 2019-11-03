@@ -52,7 +52,7 @@ namespace PointOfSale
                 Brontowurst s = new Brontowurst();
                 order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new EntreeCustomization(s));
             }
         }
         /// <summary>
@@ -67,7 +67,8 @@ namespace PointOfSale
                 Entree s = new DinoNuggets();
                 order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new EntreeCustomization(s));
+                //NavigationService.Navigate(new MenuCategorySelection());
             }
         }
         /// <summary>
@@ -82,7 +83,7 @@ namespace PointOfSale
                 Entree s = new PrehistoricPBJ();
                 order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new EntreeCustomization(s));
             }
         }
         /// <summary>
@@ -97,6 +98,7 @@ namespace PointOfSale
                 Entree s = new PterodactylWings();
                 order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                //NavigationService.Navigate(new EntreeCustomization(s));
                 NavigationService.Navigate(new MenuCategorySelection());
             }
         }
@@ -112,7 +114,7 @@ namespace PointOfSale
                 Entree s = new SteakosaurusBurger();
                 order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new EntreeCustomization(s));
             }
         }
         /// <summary>
@@ -127,7 +129,7 @@ namespace PointOfSale
                 Entree s = new TRexKingBurger();
                 order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new EntreeCustomization(s));
             }
         }
         /// <summary>
@@ -142,7 +144,7 @@ namespace PointOfSale
                 Entree s = new VelociWrap();
                 order.Add(s);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.Navigate(new EntreeCustomization(s));
             }
         }
         /// <summary>

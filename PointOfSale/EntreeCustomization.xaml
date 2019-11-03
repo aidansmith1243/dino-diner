@@ -9,8 +9,13 @@
       Title="EntreeCustomization">
 
     <Grid>
-        <WrapPanel Orientation="Horizontal">
+        <WrapPanel Orientation="Horizontal" 
+                   Name="MainPanel"
+                   ItemWidth="140"
+                   ItemHeight="70"
+                   VerticalAlignment="Top">
             
         </WrapPanel>
+        <Button Height="70" Width="140" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="DoneSelect">Done</Button>
     </Grid>
 </Page>
