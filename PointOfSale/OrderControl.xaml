@@ -31,8 +31,7 @@
                  Name ="OrderItems"
                  ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
                  SelectionChanged="OnSelectionChanged"
-                 IsSynchronizedWithCurrentItem="True"
-                 DataContextChanged="OnDataContextChanged">
+                 IsSynchronizedWithCurrentItem="True">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>

@@ -41,37 +41,44 @@ namespace PointOfSale
             Drink d = c.Drink;
             if(d is JurassicJava)
             {
-                //DrinkImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/DinoDiner-13.png"));
+                DrinkImage.Source = new BitmapImage(new Uri("Assets/DinoDiner-13.png",UriKind.Relative));
                 DrinkLabel.Text = "Jurassic Java";
             }
             else if(d is Water)
             {
+                DrinkImage.Source = new BitmapImage(new Uri("Assets/DinoDiner-15.png", UriKind.Relative));
                 DrinkLabel.Text = "Water";
             }
             else if(d is Sodasaurus)
             {
+                DrinkImage.Source = new BitmapImage(new Uri("Assets/DinoDiner-14.png", UriKind.Relative));
                 DrinkLabel.Text = "Sodasaurus";
             }
             else if(d is Tyrannotea)
             {
+                DrinkImage.Source = new BitmapImage(new Uri("Assets/DinoDiner-12.png", UriKind.Relative));
                 DrinkLabel.Text = "Tyrannotea";
             }
 
             Side s = c.Side;
             if(s is Fryceritops)
             {
+                SideImage.Source = new BitmapImage(new Uri("Assets/DinoDiner-08.png", UriKind.Relative));
                 SideLabel.Text = "Fryceritops";
             }
             else if (s is MeteorMacAndCheese)
             {
+                SideImage.Source = new BitmapImage(new Uri("Assets/DinoDiner-09.png", UriKind.Relative));
                 SideLabel.Text = "Meteor Mac & Cheese";
             }
             else if (s is MezzorellaSticks)
             {
+                SideImage.Source = new BitmapImage(new Uri("Assets/DinoDiner-10.png", UriKind.Relative));
                 SideLabel.Text = "Mezzorella Sticks";
             }
             else if (s is Triceritots)
             {
+                SideImage.Source = new BitmapImage(new Uri("Assets/DinoDiner-11.png", UriKind.Relative));
                 SideLabel.Text = "Triceritots";
             }
             /*

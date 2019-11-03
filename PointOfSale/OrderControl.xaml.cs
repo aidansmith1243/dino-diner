@@ -59,11 +59,11 @@ namespace PointOfSale
                 NavigationService?.Navigate(new SideSelection(side));
                 
             }
-            if (OrderItems.SelectedItem is Drink drink)
+            else if (OrderItems.SelectedItem is Drink drink)
             {
                 NavigationService?.Navigate(new DrinkSelection(drink));
             }
-            if (OrderItems.SelectedItem is CretaceousCombo combo)
+            else if (OrderItems.SelectedItem is CretaceousCombo combo)
             {
                 NavigationService?.Navigate(new CustomizeCombo(combo));
             }
@@ -89,36 +89,6 @@ namespace PointOfSale
                
             NavigationService?.Navigate(new MenuCategorySelection());
         }
-        /// <summary>
-        /// TODO figure out what this does
-        /// </summary>
-        private void MountItemListener()
-        {
-            if(DataContext is Order order)
-            {
-                //order.Items.CollectionChanged += OnCollectionChanged;
-                //order.PropertyChanged += OnCollectionChanged;
-            }
-        }
-        /// <summary>
-        /// TODO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void OnCollectionChanged(object sender, EventArgs args)
-        {
-            Console.WriteLine("changed data context");
-            
-            //CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-        }
-        /// <summary>
-        /// TODO
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="ags"></param>
-        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs ags) 
-        { 
-            MountItemListener(); 
-        }
+
     }
 }

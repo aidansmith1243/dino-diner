@@ -68,11 +68,13 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                /*if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
                 {
                     soda.Flavor = SodasaurusFlavor.Chocolate;
                     NavigationService.GoBack();
-                }
+                }*/
+                curDrink.Flavor = SodasaurusFlavor.Chocolate;
+                NavigationService.GoBack();
             }
         }
         /// <summary>
@@ -84,11 +86,13 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                /*if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
                 {
                     soda.Flavor = SodasaurusFlavor.Cola;
                     NavigationService.GoBack();
-                }
+                }*/
+                curDrink.Flavor = SodasaurusFlavor.Cola;
+                NavigationService.GoBack();
             }
         }
         /// <summary>
@@ -100,11 +104,13 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                /*if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
                 {
                     soda.Flavor = SodasaurusFlavor.Lime;
                     NavigationService.GoBack();
-                }
+                }*/
+                curDrink.Flavor = SodasaurusFlavor.Lime;
+                NavigationService.GoBack();
             }
         }
         /// <summary>
@@ -116,11 +122,13 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+               /* if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
                 {
                     soda.Flavor = SodasaurusFlavor.RootBeer;
                     NavigationService.GoBack();
-                }
+                }*/
+                curDrink.Flavor = SodasaurusFlavor.RootBeer;
+                NavigationService.GoBack();
             }
         }
         /// <summary>
@@ -132,11 +140,14 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
+                /*
                 if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
                 {
                     soda.Flavor = SodasaurusFlavor.Vanilla;
                     NavigationService.GoBack();
-                }
+                }*/
+                curDrink.Flavor = SodasaurusFlavor.Vanilla;
+                NavigationService.GoBack();
             }
         }
         /// <summary>
@@ -148,11 +159,13 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                /*if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
                 {
                     soda.Flavor = SodasaurusFlavor.Orange;
                     NavigationService.GoBack();
-                }
+                }*/
+                curDrink.Flavor = SodasaurusFlavor.Orange;
+                NavigationService.GoBack();
             }
         }
     }
