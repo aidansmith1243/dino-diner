@@ -31,83 +31,116 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-        /*/// <summary>
-        /// Moves to the combo customized screen
+        /// <summary>
+        /// Perform actions when the this entree button is pressed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        public void ComboSelect(object sender, RoutedEventArgs args)
-        {
-            NavigationService.Navigate(new CustomizeCombo());
-        }*/
         public void BrontowurstSelect(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)
             {
-                order.Add(new CretaceousCombo(new Brontowurst()));
+                CretaceousCombo c = new CretaceousCombo(new Brontowurst());
+                order.Add(c);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
 
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new EntreeCustomization(c));
             }
         }
+        /// <summary>
+        /// Perform actions when the this entree button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void DinoNuggetSelect(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                order.Add(new CretaceousCombo(new DinoNuggets()));
+                CretaceousCombo c = new CretaceousCombo(new DinoNuggets());
+                order.Add(c);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
 
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new EntreeCustomization(c));
             }
         }
+        /// <summary>
+        /// Perform actions when the this entree button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void PrehistoricPBJSelect(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                order.Add(new CretaceousCombo(new PrehistoricPBJ()));
+                CretaceousCombo c = new CretaceousCombo(new PrehistoricPBJ());
+                order.Add(c);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
 
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new EntreeCustomization(c));
             }
         }
+        /// <summary>
+        /// Perform actions when the this entree button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void PterodactylwingsSelect(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                order.Add(new CretaceousCombo(new PterodactylWings()));
+                CretaceousCombo c = new CretaceousCombo(new PterodactylWings());
+                order.Add(c);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
 
                 NavigationService.Navigate(new CustomizeCombo());
             }
         }
+        /// <summary>
+        /// Perform actions when the this entree button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void SteakosaurusBugerSelect(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                order.Add(new CretaceousCombo(new SteakosaurusBurger()));
+                CretaceousCombo c = new CretaceousCombo(new SteakosaurusBurger());
+                order.Add(c);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
 
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new EntreeCustomization(c));
             }
         }
+        /// <summary>
+        /// Perform actions when the this entree button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void TRexKingBurgerSelect(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                order.Add(new CretaceousCombo(new TRexKingBurger()));
+                CretaceousCombo c = new CretaceousCombo(new TRexKingBurger());
+                order.Add(c);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
 
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new EntreeCustomization(c));
             }
         }
+        /// <summary>
+        /// Perform actions when the this entree button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void VelociwrapSelect(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                order.Add(new CretaceousCombo(new VelociWrap()));
+                CretaceousCombo c = new CretaceousCombo(new VelociWrap());
+                order.Add(c);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
 
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new EntreeCustomization(c));
             }
         }
 

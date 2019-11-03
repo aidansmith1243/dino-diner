@@ -32,21 +32,38 @@ namespace PointOfSale
             InitializeComponent();
         }
         /// <summary>
+        /// Creates all of the customizations for the sender combo entree
+        /// </summary>
+        /// <param name="c"></param>
+        public EntreeCustomization(CretaceousCombo c)
+        {
+            InitializeComponent();
+            InitializeButtons(c.Entree);
+        }
+        /// <summary>
         /// Creates all of the customizations for the sender entree
         /// </summary>
         /// <param name="e"></param>
         public EntreeCustomization(Entree e)
         {
             InitializeComponent();
-            if(e is DinoNuggets d)
+            InitializeButtons(e);
+        }
+        /// <summary>
+        /// Creates the special buttons from the combo given
+        /// </summary>
+        /// <param name="e"></param>
+        private void InitializeButtons(Entree e)
+        {
+            if (e is DinoNuggets d)
             {
                 Button b = new Button();
                 b.Content = "Add Nugget";
                 b.Click += AddNugget;
-                
+
                 MainPanel.Children.Add(b);
             }
-            else if(e is Brontowurst br)
+            else if (e is Brontowurst br)
             {
                 Button b = new Button();
                 b.Content = "Hold Bun";
@@ -62,7 +79,7 @@ namespace PointOfSale
                 MainPanel.Children.Add(b2);
                 MainPanel.Children.Add(b3);
             }
-            else if(e is PrehistoricPBJ p)
+            else if (e is PrehistoricPBJ p)
             {
                 Button b = new Button();
                 b.Content = "Hold Peanut Butter";
@@ -74,12 +91,12 @@ namespace PointOfSale
                 MainPanel.Children.Add(b);
                 MainPanel.Children.Add(b2);
             }
-            else if(e is PterodactylWings t)
+            else if (e is PterodactylWings t)
             {
                 // No modifications for wings
-                
+
             }
-            else if(e is SteakosaurusBurger s)
+            else if (e is SteakosaurusBurger s)
             {
                 Button b = new Button();
                 b.Content = "Hold Bun";
@@ -99,7 +116,7 @@ namespace PointOfSale
                 MainPanel.Children.Add(b3);
                 MainPanel.Children.Add(b4);
             }
-            else if(e is TRexKingBurger r)
+            else if (e is TRexKingBurger r)
             {
                 Button b = new Button();
                 b.Content = "Hold Bun";
@@ -131,13 +148,13 @@ namespace PointOfSale
                 MainPanel.Children.Add(b2);
                 MainPanel.Children.Add(b3);
                 MainPanel.Children.Add(b4);
-                
+
                 MainPanel.Children.Add(b5);
                 MainPanel.Children.Add(b6);
                 MainPanel.Children.Add(b7);
                 MainPanel.Children.Add(b8);
             }
-            else if(e is VelociWrap v)
+            else if (e is VelociWrap v)
             {
                 Button b = new Button();
                 b.Content = "Hold Dressing";
@@ -153,9 +170,6 @@ namespace PointOfSale
                 MainPanel.Children.Add(b2);
                 MainPanel.Children.Add(b3);
             }
-
-            
-
         }
         /// <summary>
         /// Performs the action on the selected entree
@@ -165,8 +179,14 @@ namespace PointOfSale
         public void HoldCheese(object sender, EventArgs args)
         {
             if (DataContext is Order order)
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is VelociWrap e)
+            {
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is VelociWrap e)
                     e.HoldCheese();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is VelociWrap e2)
+                        e2.HoldCheese();
+            }
         }
         /// <summary>
         /// Performs the action on the selected entree
@@ -176,8 +196,14 @@ namespace PointOfSale
         public void HoldDressing(object sender, EventArgs args)
         {
             if (DataContext is Order order)
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is VelociWrap e)
+            {
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is VelociWrap e)
                     e.HoldDressing();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is VelociWrap e2)
+                        e2.HoldDressing();
+            }
         }
         /// <summary>
         /// Performs the action on the selected entree
@@ -187,8 +213,14 @@ namespace PointOfSale
         public void HoldMayo(object sender, EventArgs args)
         {
             if (DataContext is Order order)
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is TRexKingBurger e)
+            {
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is TRexKingBurger e)
                     e.HoldMayo();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is TRexKingBurger e2)
+                        e2.HoldMayo();
+            }
         }
         /// <summary>
         /// Performs the action on the selected entree
@@ -198,8 +230,14 @@ namespace PointOfSale
         public void HoldTomato(object sender, EventArgs args)
         {
             if (DataContext is Order order)
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is TRexKingBurger e)
+            {
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is TRexKingBurger e)
                     e.HoldTomato();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is TRexKingBurger e2)
+                        e2.HoldTomato();
+            }
         }
         /// <summary>
         /// Performs the action on the selected entree
@@ -210,10 +248,17 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is TRexKingBurger e)
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is TRexKingBurger e)
                     e.HoldLettuce();
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is VelociWrap v)
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is TRexKingBurger e2)
+                        e2.HoldLettuce();
+                if (cur is VelociWrap v)
                     v.HoldLettuce();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is VelociWrap e2)
+                        e2.HoldLettuce();
             }
         }
         /// <summary>
@@ -225,10 +270,17 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is SteakosaurusBurger e)
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is SteakosaurusBurger e)
                     e.HoldMustard();
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is TRexKingBurger r)
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is SteakosaurusBurger e2)
+                        e2.HoldMustard();
+                if (cur is TRexKingBurger r)
                     r.HoldMustard();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is TRexKingBurger e2)
+                        e2.HoldMustard();
             }
         }
         /// <summary>
@@ -240,10 +292,17 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is SteakosaurusBurger e)
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is SteakosaurusBurger e)
                     e.HoldKetchup();
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is TRexKingBurger r)
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is SteakosaurusBurger e2)
+                        e2.HoldKetchup();
+                if (cur is TRexKingBurger r)
                     r.HoldKetchup();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is TRexKingBurger e2)
+                        e2.HoldKetchup();
             }
         }
         /// <summary>
@@ -255,10 +314,17 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is SteakosaurusBurger e)
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is SteakosaurusBurger e)
                     e.HoldPickle();
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is TRexKingBurger r)
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is SteakosaurusBurger e2)
+                        e2.HoldPickle();
+                if (cur is TRexKingBurger r)
                     r.HoldPickle();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is TRexKingBurger e2)
+                        e2.HoldPickle();
             }
         }
         /// <summary>
@@ -269,8 +335,14 @@ namespace PointOfSale
         public void HoldJelly(object sender, EventArgs args)
         {
             if (DataContext is Order order)
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is PrehistoricPBJ e)
+            {
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is PrehistoricPBJ e)
                     e.HoldJelly();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is PrehistoricPBJ e2)
+                        e2.HoldJelly();
+            }
         }
         /// <summary>
         /// Performs the action on the selected entree
@@ -280,8 +352,14 @@ namespace PointOfSale
         public void HoldPeanutButter(object sender, EventArgs args)
         {
             if (DataContext is Order order)
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is PrehistoricPBJ e)
+            {
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is PrehistoricPBJ e)
                     e.HoldPeanutButter();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is PrehistoricPBJ e2)
+                        e2.HoldPeanutButter();
+            }
         }
         /// <summary>
         /// Performs the action on the selected entree
@@ -291,8 +369,14 @@ namespace PointOfSale
         public void HoldPeppers(object sender, EventArgs args)
         {
             if (DataContext is Order order)
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Brontowurst e)
+            {
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is Brontowurst e)
                     e.HoldPeppers();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is Brontowurst e2)
+                        e2.HoldPeppers();
+            }
         }
         /// <summary>
         /// Performs the action on the selected entree
@@ -303,12 +387,22 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Brontowurst e)
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is Brontowurst e)
                     e.HoldBun();
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is SteakosaurusBurger x)
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is Brontowurst e2)
+                        e2.HoldBun();
+                if (cur is SteakosaurusBurger x)
                     x.HoldBun();
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is TRexKingBurger r)
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is SteakosaurusBurger e2)
+                        e2.HoldBun();
+                if (cur is TRexKingBurger r)
                     r.HoldBun();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is TRexKingBurger e2)
+                        e2.HoldBun();
             }
         }
         /// <summary>
@@ -320,10 +414,17 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Brontowurst e)
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is Brontowurst e)
                     e.HoldOnion();
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is TRexKingBurger r)
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is Brontowurst e2)
+                        e2.HoldOnion();
+                if (cur is TRexKingBurger r)
                     r.HoldOnion();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is TRexKingBurger e2)
+                        e2.HoldOnion();
             }
         }
         /// <summary>
@@ -335,8 +436,12 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is DinoNuggets e)
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is DinoNuggets e)
                     e.AddNugget();
+                else if (cur is CretaceousCombo c)
+                    if (c.Entree is DinoNuggets e2)
+                        e2.AddNugget();
             }
         }
         /// <summary>
@@ -346,7 +451,14 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void DoneSelect(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (DataContext is Order order)
+            {
+                object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
+                if (cur is Entree)
+                    NavigationService.Navigate(new MenuCategorySelection());
+                else if (cur is CretaceousCombo)
+                    NavigationService.Navigate(new CustomizeCombo());
+            }
         }
     }
 }
