@@ -15,14 +15,30 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Order: INotifyPropertyChanged
     {
-        /*// Code to add items in another way
+        /// Backing variable for Items
         List<IOrderItem> items = new List<IOrderItem>();
-        public IOrderItem[] Item { get { return items.ToArray(); } }
+        /// <summary>
+        /// holds the list of items in the order and returns an array of the items.
+        /// </summary>
+        public IOrderItem[] Items { get { return items.ToArray(); } }
+        /// <summary>
+        /// Adds the item to the order and notifies of properties changed
+        /// </summary>
+        /// <param name="i"></param>
         public void Add(IOrderItem i)
         {
             i.PropertyChanged += OnItemPropertyChanged;
             items.Add(i);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
+        /// <summary>
+        /// Remove an item from the list and returns if it could be removed.
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
         public bool Remove(IOrderItem i)
         {
             bool removed = items.Remove(i);
@@ -35,22 +51,25 @@ namespace DinoDiner.Menu
             }
             return removed;
         }
+        /// <summary>
+        /// Notifies when an item has been changed in the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
-        */
+        // end new code
+
         public Order()
         {
-            Items.CollectionChanged += OnCollectionChanged;
+           
         }
 
-        /// <summary>
-        /// List to hold all of the items in the order.
-        /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
         /// <summary>
         /// Calculates the total price from the price of all the items.
         /// </summary>

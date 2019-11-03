@@ -110,6 +110,9 @@ namespace DinoDiner.Menu
         public CretaceousCombo(Entree entree)
         {
             this.Entree = entree;
+            Entree.PropertyChanged += OnItemPropertyChanged;
+            Drink.PropertyChanged += OnItemPropertyChanged;
+            Side.PropertyChanged += OnItemPropertyChanged;
         }
         /// <summary>
         /// Gives a string description of this combo.
@@ -128,6 +131,17 @@ namespace DinoDiner.Menu
             {
                 return this.ToString();
             }
+        }
+        /// <summary>
+        /// Notify of all the changes to the object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
         /// <summary>
         /// event for when a property is changed

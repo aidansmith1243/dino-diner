@@ -15,37 +15,37 @@ namespace MenuTest
         public void EntreeOrderTest()
         {
             Order o = new Order();
-            o.Items.Add(new DinoNuggets());
+            o.Add(new DinoNuggets());
             Assert.Equal(4.25 + 4.25*o.SalesTaxRate,o.TotalCost,2);
         }
         [Fact]
         public void DrinkOrderTest()
         {
             Order o = new Order();
-            o.Items.Add(new Water());
+            o.Add(new Water());
             Assert.Equal(0.10 + 0.10 * o.SalesTaxRate, o.TotalCost, 2);
         }
         [Fact]
         public void ComboOrderTest()
         {
             Order o = new Order();
-            o.Items.Add(new CretaceousCombo(new VelociWrap()));
+            o.Add(new CretaceousCombo(new VelociWrap()));
             Assert.Equal(10.47, o.TotalCost, 2);
         }
         [Fact]
         public void SideOrderTest()
         {
             Order o = new Order();
-            o.Items.Add(new Fryceritops());
+            o.Add(new Fryceritops());
             Assert.Equal(0.99 + 0.99 * o.SalesTaxRate, o.TotalCost, 2);
         }
         [Fact]
         public void MultipleOrderItems()
         {
             Order o = new Order();
-            o.Items.Add(new Fryceritops());
-            o.Items.Add(new Water());
-            o.Items.Add(new DinoNuggets());
+            o.Add(new Fryceritops());
+            o.Add(new Water());
+            o.Add(new DinoNuggets());
             Assert.Equal((0.99 + 0.1 + 4.25 )* (1+ o.SalesTaxRate), o.TotalCost, 2);
         }
 
@@ -55,7 +55,7 @@ namespace MenuTest
             Order O = new Order();
             Fryceritops f = new Fryceritops();
             f.Price = -11111;
-            O.Items.Add(f);
+            O.Add(f);
             Assert.Equal(0, O.SubtotalCost, 2);
 
         }
