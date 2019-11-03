@@ -92,7 +92,7 @@ namespace PointOfSale
                 order.Add(c);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
 
-                NavigationService.Navigate(new CustomizeCombo());
+                NavigationService.Navigate(new CustomizeCombo(c));
             }
         }
         /// <summary>

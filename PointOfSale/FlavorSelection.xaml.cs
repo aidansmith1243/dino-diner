@@ -34,10 +34,11 @@ namespace PointOfSale
         /// <summary>
         /// Constructor
         /// </summary>
+        private Sodasaurus curDrink; 
         public FlavorSelection(Sodasaurus drink)
         {
             InitializeComponent();
-            DataContext = drink;
+            curDrink = drink;
         }
         /// <summary>
         /// Change the flavor and go back to drink selection
@@ -48,11 +49,13 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
+                /*if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus soda)
                 {
                     soda.Flavor = SodasaurusFlavor.Cherry;
                     NavigationService.GoBack();
-                }
+                }*/
+                curDrink.Flavor = SodasaurusFlavor.Cherry;
+                NavigationService.GoBack();
             }
             
         }

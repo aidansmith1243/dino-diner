@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -31,13 +32,68 @@ namespace PointOfSale
             InitializeComponent();
         }
         /// <summary>
+        /// Constructor to start with a combo
+        /// </summary>
+        /// <param name="c"></param>
+        public CustomizeCombo(CretaceousCombo c)
+        {
+            InitializeComponent();
+            Drink d = c.Drink;
+            if(d is JurassicJava)
+            {
+                //DrinkImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/DinoDiner-13.png"));
+                DrinkLabel.Text = "Jurassic Java";
+            }
+            else if(d is Water)
+            {
+                DrinkLabel.Text = "Water";
+            }
+            else if(d is Sodasaurus)
+            {
+                DrinkLabel.Text = "Sodasaurus";
+            }
+            else if(d is Tyrannotea)
+            {
+                DrinkLabel.Text = "Tyrannotea";
+            }
+
+            Side s = c.Side;
+            if(s is Fryceritops)
+            {
+                SideLabel.Text = "Fryceritops";
+            }
+            else if (s is MeteorMacAndCheese)
+            {
+                SideLabel.Text = "Meteor Mac & Cheese";
+            }
+            else if (s is MezzorellaSticks)
+            {
+                SideLabel.Text = "Mezzorella Sticks";
+            }
+            else if (s is Triceritots)
+            {
+                SideLabel.Text = "Triceritots";
+            }
+            /*
+            SideImage.Source =  
+            SideLabel.Text =
+            DrinkImage.Source =
+            DrinkLabel.Text =*/
+        }
+        /// <summary>
         /// Changes the screen to the side selection
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
         public void SideSelect(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection());
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    NavigationService.Navigate(new SideSelection(combo));
+                }
+            }
         }
         /// <summary>
         /// Changes the screen to the drink select
@@ -46,7 +102,13 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void DrinkSelect(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    NavigationService.Navigate(new DrinkSelection(combo));
+                }
+            }
         }
         /// <summary>
         /// used to make the size selection buttons into radio buttons
@@ -56,11 +118,25 @@ namespace PointOfSale
         public void SizeSelect(object sender, RoutedEventArgs args)
         {
             Button btn = (Button)sender;
-            Large.Background = Brushes.LightGray;
-            Medium.Background = Brushes.LightGray;
-            Small.Background = Brushes.LightGray;
-            btn.Background = Brushes.Gray;
-            
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is CretaceousCombo combo)
+                {
+                    switch (btn.Name)
+                    {
+                        case "Small":
+                            combo.Size = DinoDiner.Menu.Size.Small;
+                            break;
+                        case "Medium":
+                            combo.Size = DinoDiner.Menu.Size.Medium;
+                            break;
+                        case "Large":
+                            combo.Size = DinoDiner.Menu.Size.Large;
+                            break;
+                    }
+                }
+            }
+
         }
         /// <summary>
         /// Returns to the main menu 

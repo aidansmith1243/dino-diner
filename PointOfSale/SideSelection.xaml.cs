@@ -33,10 +33,27 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// stores the combo if that is what is being edited
+        /// </summary>
+        private CretaceousCombo comboChange = null;
+        /// <summary>
+        /// Constructor to edit a combo
+        /// </summary>
+        /// <param name="combo"></param>
+        public SideSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            comboChange = combo;
+
+        }
+        /// <summary>
+        /// Constructor to edit a side 
+        /// </summary>
+        /// <param name="side"></param>
         public SideSelection(Side side)
         {
             InitializeComponent();
-            //DataContext = side;
             MeteorBtn.IsEnabled = false;
             MezzorellaBtn.IsEnabled = false;
             FryceritopsBtn.IsEnabled = false;
@@ -54,22 +71,44 @@ namespace PointOfSale
 
             if (DataContext is Order order)
             {
-                if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
-                switch (btn.Name)
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
                 {
-                    case "Small":
+                    switch (btn.Name)
+                    {
+                        case "Small":
                             side.Size = DinoDiner.Menu.Size.Small;
-                        break;
-                    case "Medium":
+                            break;
+                        case "Medium":
                             side.Size = DinoDiner.Menu.Size.Medium;
                             break;
-                    case "Large":
+                        case "Large":
                             side.Size = DinoDiner.Menu.Size.Large;
                             break;
+                    }
+                    NavigationService.Navigate(new MenuCategorySelection());
+
                 }
-                //order.OnCollectionChanged(null, null); // Refreshes the price shown on the order
+                if (comboChange != null)
+                {
+                    switch (btn.Name)
+                    {
+                        case "Small":
+                            comboChange.Side.Size = DinoDiner.Menu.Size.Small;
+                            break;
+                        case "Medium":
+                            comboChange.Side.Size = DinoDiner.Menu.Size.Medium;
+                            break;
+                        case "Large":
+                            comboChange.Side.Size = DinoDiner.Menu.Size.Large;
+                            break;
+                    }
+                    NavigationService.GoBack();
+
+                }
+
             }
-            NavigationService.Navigate(new MenuCategorySelection());
+            //NavigationService.Navigate(new MenuCategorySelection());
+            //NavigationService.GoBack();
 
         }
         /// <summary>
@@ -82,8 +121,15 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new Fryceritops();
-                order.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                if (comboChange != null)
+                {
+                    comboChange.Side = s;
+                }
+                else
+                {
+                    order.Add(s);
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
 
         }
@@ -97,8 +143,15 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new MeteorMacAndCheese();
-                order.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                if (comboChange != null)
+                {
+                    comboChange.Side = s;
+                }
+                else
+                {
+                    order.Add(s);
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
 
         }
@@ -112,8 +165,15 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new MezzorellaSticks();
-                order.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                if (comboChange != null)
+                {
+                    comboChange.Side = s;
+                }
+                else
+                {
+                    order.Add(s);
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
 
         }
@@ -127,8 +187,15 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Side s = new Triceritots();
-                order.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                if (comboChange != null)
+                {
+                    comboChange.Side = s;
+                }
+                else
+                {
+                    order.Add(s);
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
 
         }
@@ -139,7 +206,10 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void DoneSelected(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if (comboChange != null)
+                NavigationService.Navigate(new CustomizeCombo(comboChange));
+            else
+                NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

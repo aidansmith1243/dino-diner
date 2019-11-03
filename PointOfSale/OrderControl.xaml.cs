@@ -63,6 +63,15 @@ namespace PointOfSale
             {
                 NavigationService?.Navigate(new DrinkSelection(drink));
             }
+            if (OrderItems.SelectedItem is CretaceousCombo combo)
+            {
+                NavigationService?.Navigate(new CustomizeCombo(combo));
+            }
+            else
+            {
+                NavigationService?.Navigate(new MenuCategorySelection());
+            }
+
         }
         /// <summary>
         /// Runs when the cancel button is clicked to remove items and 

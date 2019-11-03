@@ -13,24 +13,60 @@ namespace DinoDiner.Menu
     /// </summary>
     public class CretaceousCombo: IMenuItem, IOrderItem, INotifyPropertyChanged
     {
-        // Backing Variables
+        /// <summary>
+        /// Backing variable for Size
+        /// </summary>
         private Size size;
-
 
         /// <summary>
         /// Gets and sets the entree
         /// </summary>
         public Entree Entree { get; set; }
-
+        /// <summary>
+        /// Backing variable for side
+        /// </summary>
+        private Side side = new Fryceritops();
         /// <summary>
         /// Gets and sets the side
         /// </summary>
-        public Side Side { get; set; } = new Fryceritops();
+        public Side Side 
+        { 
+            get
+            {
+                return side;
+            }
+            set
+            {
+                side = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                side.PropertyChanged += OnItemPropertyChanged;
+            }
+        }
 
+        /// <summary>
+        /// Backing variable
+        /// </summary>
+        private Drink drink = new Sodasaurus();
         /// <summary>
         /// Gets and sets the drink
         /// </summary>
-        public Drink Drink { get; set; } = new Sodasaurus();
+        public Drink Drink 
+        { 
+            get 
+            { 
+                return drink;
+            } 
+            set 
+            { 
+                drink = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                drink.PropertyChanged += OnItemPropertyChanged;
+            } 
+        }
 
         /// <summary>
         /// Gets the price of the combo

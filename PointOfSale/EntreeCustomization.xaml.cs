@@ -456,8 +456,8 @@ namespace PointOfSale
                 object cur = CollectionViewSource.GetDefaultView(order.Items).CurrentItem;
                 if (cur is Entree)
                     NavigationService.Navigate(new MenuCategorySelection());
-                else if (cur is CretaceousCombo)
-                    NavigationService.Navigate(new CustomizeCombo());
+                else if (cur is CretaceousCombo c)
+                    NavigationService.Navigate(new CustomizeCombo(c));
             }
         }
     }

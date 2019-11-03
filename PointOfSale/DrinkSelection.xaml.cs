@@ -31,6 +31,13 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        private CretaceousCombo comboChange = null;
+        public DrinkSelection(CretaceousCombo c)
+        {
+            InitializeComponent();
+            comboChange = c;
+
+        }
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
@@ -72,8 +79,15 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Drink s = new Sodasaurus();
-                order.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                if (comboChange != null)
+                {
+                    comboChange.Drink = s;
+                }
+                else
+                {
+                    order.Add(s);
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
         }
         /// <summary>
@@ -93,8 +107,15 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Drink s = new Water();
-                order.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                if (comboChange != null)
+                {
+                    comboChange.Drink = s;
+                }
+                else
+                {
+                    order.Add(s);
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
         }
         /// <summary>
@@ -114,8 +135,15 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Drink s = new JurassicJava();
-                order.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                if (comboChange != null)
+                {
+                    comboChange.Drink = s;
+                }
+                else
+                {
+                    order.Add(s);
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
         }
         /// <summary>
@@ -136,8 +164,15 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 Drink s = new Tyrannotea();
-                order.Add(s);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                if (comboChange != null)
+                {
+                    comboChange.Drink = s;
+                }
+                else
+                {
+                    order.Add(s);
+                    CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+                }
             }
         }
         /// <summary>
@@ -169,7 +204,19 @@ namespace PointOfSale
                             drink.Size = DinoDiner.Menu.Size.Large;
                             break;
                     }
-                //order.OnCollectionChanged(null, null);
+                if(comboChange != null)
+                    switch (btn.Name)
+                    {
+                        case "Small":
+                            comboChange.Drink.Size = DinoDiner.Menu.Size.Small;
+                            break;
+                        case "Medium":
+                            comboChange.Drink.Size = DinoDiner.Menu.Size.Medium;
+                            break;
+                        case "Large":
+                            comboChange.Drink.Size = DinoDiner.Menu.Size.Large;
+                            break;
+                    }
             }
 
         }
@@ -187,22 +234,34 @@ namespace PointOfSale
             {
                 case "Sweet":
                     if (DataContext is Order order)
+                    {
                         if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Tyrannotea drink)
                         {
                             drink.Sweet = true;
                         }
+                        if (comboChange?.Drink is Tyrannotea d)
+                            d.Sweet = true;
+                    }
                     break;
                 case "Decaf":
                     if (DataContext is Order o2)
+                    {
                         if (CollectionViewSource.GetDefaultView(o2.Items).CurrentItem is JurassicJava dr2)
                         {
                             dr2.Decaf = true;
                         }
+                        if (comboChange?.Drink is JurassicJava d)
+                            d.Decaf = true;
+                    }
                     break;
                 case "Flavor":
                     if (DataContext is Order o3)
+                    {
                         if (CollectionViewSource.GetDefaultView(o3.Items).CurrentItem is Sodasaurus d3)
                             NavigationService.Navigate(new FlavorSelection(d3));
+                        if (comboChange?.Drink is Sodasaurus d)
+                            NavigationService.Navigate(new FlavorSelection(d));
+                    }
                     break;
             }
         }
@@ -228,37 +287,27 @@ namespace PointOfSale
                         {
                             drink2.AddLemon();
                         }
+                        if (comboChange?.Drink is Tyrannotea d)
+                            d.AddLemon();
+                        if (comboChange?.Drink is Water d2)
+                            d2.AddLemon();
 
                     }
                     break;
                 case "Room for Cream":
                     if (DataContext is Order o2)
+                    {
                         if (CollectionViewSource.GetDefaultView(o2.Items).CurrentItem is JurassicJava java)
                         {
                             java.LeaveRoomForCream();
                         }
+                        if (comboChange?.Drink is JurassicJava j)
+                            j.LeaveRoomForCream();
+                    }
                     break;
             }
         }
-        /// <summary>
-        /// Adds lemons to the various drinks that allow it
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void AddLemon(object sender, RoutedEventArgs args) 
-        {
-            if (DataContext is Order order)
-            {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Water drink)
-                {
-                    drink.AddLemon();
-                }
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Tyrannotea d2)
-                {
-                    d2.AddLemon();
-                }
-            }
-        }
+
         /// <summary>
         /// Changes the ice property of the drink selected by adding or removing.
         /// </summary>
@@ -284,6 +333,14 @@ namespace PointOfSale
                 {
                     d4.HoldIce();
                 }
+                if (comboChange?.Drink is Water w)
+                    w.HoldIce();
+                if (comboChange?.Drink is Tyrannotea t)
+                    t.HoldIce();
+                if (comboChange?.Drink is JurassicJava j)
+                    j.AddIce();
+                if (comboChange?.Drink is Sodasaurus s)
+                    s.HoldIce();
             }
         }
         /// <summary>
@@ -293,7 +350,11 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void DoneSelect(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new MenuCategorySelection());
+            if(comboChange != null)
+                NavigationService.Navigate(new CustomizeCombo(comboChange));
+            else
+                NavigationService.Navigate(new MenuCategorySelection());
+
         }
     }
 }

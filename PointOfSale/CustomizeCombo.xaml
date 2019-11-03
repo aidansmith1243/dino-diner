@@ -20,15 +20,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height=".6*"/>
         </Grid.RowDefinitions>
         
         <!--Side and Drink buttons-->
         <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">Side</TextBlock>
         <Button Click="SideSelect" Grid.Column="0" Grid.Row="1">
             <Grid>
-                <Image Source="Assets/DinoDiner-08.png"/>
-                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Image Source="Assets/DinoDiner-08.png" Name="SideImage"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="SideLabel">
                     Fryceritops
                 </TextBlock>
             </Grid>
@@ -37,8 +37,8 @@
         <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">Drink</TextBlock>
         <Button Click="DrinkSelect" Grid.Column="1" Grid.Row="1">
             <Grid>
-                <Image Source="Assets/DinoDiner-14.png"/>
-                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Image Source="Assets/DinoDiner-14.png" Name="DrinkImage"/>
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="DrinkLabel">
                         Sodasaurus
                 </TextBlock>
             </Grid>
@@ -47,6 +47,7 @@
         <!--Grid for the size buttons-->
         <Grid Grid.Row="2" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -60,6 +61,7 @@
             <Button Click="SizeSelect" Grid.Row="1" Grid.Column="0" Name="Small">Small</Button>
             <Button Click="SizeSelect" Grid.Row="1" Grid.Column="1" Name="Medium">Medium</Button>
             <Button Click="SizeSelect" Grid.Row="1" Grid.Column="2" Name="Large">Large</Button>
+            <Button Click="DoneSelected" Grid.Row="1" Grid.Column="3">Done</Button>
         </Grid>
     </Grid>
 </Page>
