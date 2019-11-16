@@ -12,3 +12,50 @@ body {
     padding-right: 15px;
 }
 
+.back-img {
+    background-image: url('../images/DinoDiner-32.png');
+    background-position: left;
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.menu-item{
+    display: grid;
+    grid-template-columns: 50px 220px 100px 100px;
+    grid-template-rows: auto, auto, auto, auto;
+}
+.name{
+    grid-column: 2;
+    grid-row: 1;
+}
+.small-price{
+    grid-column: 3;
+    grid-row: 1;
+}
+.medium-price {
+    grid-column: 3;
+    grid-row: 2;
+}
+.large-price {
+    grid-column: 3;
+    grid-row: 3;
+}
+.small-calories {
+    grid-column: 4;
+    grid-row: 1;
+}
+.medium-calories {
+    grid-column: 4;
+    grid-row: 2;
+}
+.large-calories {
+    grid-column: 4;
+    grid-row: 3;
+}
+.ingredients{
+    padding-left: 50px;
+    color: lightgray;
+    grid-row: 4;
+    grid-column: 1/5;
+}
