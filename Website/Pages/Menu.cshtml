@@ -3,144 +3,176 @@
 @{
     ViewData["Title"] = "Menu";
 }
-
-<h1>Menu</h1>
-
-<h2>Combos</h2>
-<div class="combo-items">
-    @foreach (DinoDiner.Menu.IMenuItem m in Model.menu.AvailableCombos)
-    {
-    <div class="menu-item">
-        <div class="name">
-            <a>@m.ToString()</a>
-        </div>
-        <div class="small-price">
-            <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
-        </div>
-        <div class="small-calories">
-            <a>@m.Calories</a>
-        </div>
-        @if (m is DinoDiner.Menu.CretaceousCombo c)
-        {
-            c.Size = DinoDiner.Menu.Size.Medium;
-            <div class="medium-price">
-                <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
-            </div>
-            <div class="medium-calories">
-                <a>@m.Calories</a>
-            </div>
-            c.Size = DinoDiner.Menu.Size.Large;
-            <div class="large-price">
-                <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
-            </div>
-            <div class="large-calories">
-                <a>@m.Calories</a>
-            </div>
-        }
-        <div class="ingredients">
-            <a>@Model.GetIngredients(m)</a>
-        </div>
-    </div>
-    <br />
-    }
-</div>
-<h2>Entrees</h2>
-<div class="entree-items">
-    @foreach (DinoDiner.Menu.IMenuItem m in Model.menu.AvailableEntrees)
-    {
-        <div class="menu-item">
-            <div class="name">
-                <a>@m.ToString()</a>
-            </div>
-            <div class="small-price">
-                <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
-            </div>
-            <div class="small-calories">
-                <a>@m.Calories</a>
-            </div>
-            <div class="ingredients">
-                <a>@Model.GetIngredients(m)</a>
-            </div>
-        </div>
-        <br />
-    }
-
-
-</div>
-<h2>Sides</h2>
-    <div class="side-items">
-        @foreach (DinoDiner.Menu.IMenuItem m in Model.menu.AvailableSides)
-        {
-        <div class="menu-item">
-            <div class="name">
-                <a>@m.ToString()</a>
-            </div>
-            <div class="small-price">
-                <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
-            </div>
-            <div class="small-calories">
-                <a>@m.Calories</a>
-            </div>
-            @if (m is DinoDiner.Menu.Side c)
+<div class="container">
+    <div class="menu-items">
+        <h1>Menu</h1>
+        <h2>Combos</h2>
+        <div class="combo-items">
+            @foreach (DinoDiner.Menu.IMenuItem m in Model.menu.AvailableCombos)
             {
-                c.Size = DinoDiner.Menu.Size.Medium;
-                <div class="medium-price">
-                    <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                <div class="menu-item">
+                    <div class="name">
+                        <a>@m.ToString()</a>
+                    </div>
+                    <div class="small-price">
+                        <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                    </div>
+                    <div class="small-calories">
+                        <a>@m.Calories</a>
+                    </div>
+                    @if (m is DinoDiner.Menu.CretaceousCombo c)
+                    {
+                        c.Size = DinoDiner.Menu.Size.Medium;
+                        <div class="medium-price">
+                            <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                        </div>
+                        <div class="medium-calories">
+                            <a>@m.Calories</a>
+                        </div>
+                        c.Size = DinoDiner.Menu.Size.Large;
+                        <div class="large-price">
+                            <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                        </div>
+                        <div class="large-calories">
+                            <a>@m.Calories</a>
+                        </div>
+                    }
+                    <div class="ingredients">
+                        <a>@Model.GetIngredients(m)</a>
+                    </div>
                 </div>
-                <div class="medium-calories">
-                    <a>@m.Calories</a>
-                </div>
-                c.Size = DinoDiner.Menu.Size.Large;
-                <div class="large-price">
-                    <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
-                </div>
-                <div class="large-calories">
-                    <a>@m.Calories</a>
-                </div>
+                <br />
             }
-            <div class="ingredients">
-                <a>@Model.GetIngredients(m)</a>
-            </div>
         </div>
-            <br />
-        }
-    </div>
-<h2>Drinks</h2>
-    <div class="drink-items">
-        @foreach (DinoDiner.Menu.IMenuItem m in Model.menu.AvailableDrinks)
-        {
-        <div class="menu-item">
-            <div class="name">
-                <a>@m.ToString()</a>
-            </div>
-            <div class="small-price">
-                <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
-            </div>
-            <div class="small-calories">
-                <a>@m.Calories</a>
-            </div>
-            @if (m is DinoDiner.Menu.Drink c)
+        <h2>Entrees</h2>
+        <div class="entree-items">
+            @foreach (DinoDiner.Menu.IMenuItem m in Model.menu.AvailableEntrees)
             {
-                c.Size = DinoDiner.Menu.Size.Medium;
-                <div class="medium-price">
-                    <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                <div class="menu-item">
+                    <div class="name">
+                        <a>@m.ToString()</a>
+                    </div>
+                    <div class="small-price">
+                        <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                    </div>
+                    <div class="small-calories">
+                        <a>@m.Calories</a>
+                    </div>
+                    <div class="ingredients">
+                        <a>@Model.GetIngredients(m)</a>
+                    </div>
                 </div>
-                <div class="medium-calories">
-                    <a>@m.Calories</a>
-                </div>
-                c.Size = DinoDiner.Menu.Size.Large;
-                <div class="large-price">
-                    <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
-                </div>
-                <div class="large-calories">
-                    <a>@m.Calories</a>
-                </div>
+                <br />
             }
-            <div class="ingredients">
-                <a>@Model.GetIngredients(m)</a>
-            </div>
-        </div>
-            <br />
-        }
-    </div>
 
+
+        </div>
+        <h2>Sides</h2>
+        <div class="side-items">
+            @foreach (DinoDiner.Menu.IMenuItem m in Model.menu.AvailableSides)
+            {
+                <div class="menu-item">
+                    <div class="name">
+                        <a>@m.ToString()</a>
+                    </div>
+                    <div class="small-price">
+                        <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                    </div>
+                    <div class="small-calories">
+                        <a>@m.Calories</a>
+                    </div>
+                    @if (m is DinoDiner.Menu.Side c)
+                    {
+                        c.Size = DinoDiner.Menu.Size.Medium;
+                        <div class="medium-price">
+                            <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                        </div>
+                        <div class="medium-calories">
+                            <a>@m.Calories</a>
+                        </div>
+                        c.Size = DinoDiner.Menu.Size.Large;
+                        <div class="large-price">
+                            <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                        </div>
+                        <div class="large-calories">
+                            <a>@m.Calories</a>
+                        </div>
+                    }
+                    <div class="ingredients">
+                        <a>@Model.GetIngredients(m)</a>
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+        <h2>Drinks</h2>
+        <div class="drink-items">
+            @foreach (DinoDiner.Menu.IMenuItem m in Model.menu.AvailableDrinks)
+            {
+                <div class="menu-item">
+                    <div class="name">
+                        <a>@m.ToString()</a>
+                    </div>
+                    <div class="small-price">
+                        <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                    </div>
+                    <div class="small-calories">
+                        <a>@m.Calories</a>
+                    </div>
+                    @if (m is DinoDiner.Menu.Drink c)
+                    {
+                        c.Size = DinoDiner.Menu.Size.Medium;
+                        <div class="medium-price">
+                            <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                        </div>
+                        <div class="medium-calories">
+                            <a>@m.Calories</a>
+                        </div>
+                        c.Size = DinoDiner.Menu.Size.Large;
+                        <div class="large-price">
+                            <a>@(String.Format("{0:C}", Convert.ToInt32(m.Price)))</a>
+                        </div>
+                        <div class="large-calories">
+                            <a>@m.Calories</a>
+                        </div>
+                    }
+                    <div class="ingredients">
+                        <a>@Model.GetIngredients(m)</a>
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+    </div>
+    <div class="search-section">
+        <form id="search-form" method="post">
+            <input type="text" name="search" id="search" />
+            <input type="submit" value="Search and Filter" id="search-filter" />
+            <label>
+                Menu Category
+            </label>
+            <br />
+            <label>
+                <input type="checkbox" value="Combo" name="menuCategory" class="menu-category" />
+                Combo
+            </label>
+            <br />
+            <label>
+                <input type="checkbox" value="Entree" name="menuCategory" class="menu-category" />
+                Entree
+            </label>
+            <br />
+            <label>
+                <input type="checkbox" value="Side" name="menuCategory" class="menu-category" />
+                Side
+            </label>
+            <br />
+            <label>
+                <input type="checkbox" value="Drink" name="menuCategory" class="menu-category" />
+                Drink
+            </label>
+            <br />
+
+        </form>
+    </div>
+</div>
