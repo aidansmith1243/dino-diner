@@ -13,6 +13,82 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Menu
     {
+        public static List<IMenuItem> FilterByName(List<IMenuItem> menu, string name)
+        {
+            if (name == null || name.Equals("")) return menu;
+            List<IMenuItem> newMenu = new List<IMenuItem>();
+            foreach(IMenuItem m in menu)
+            {
+                if (m.ToString().ToLower().Contains(name.ToLower()))
+                {
+                    newMenu.Add(m);
+                }
+            }
+            return newMenu;
+            
+        }
+        public static List<IMenuItem> FilterByType(List<IMenuItem> menu, List<string> type)
+        {
+            if (type == null || type.Count == 0) return menu;
+            List<IMenuItem> newMenu = new List<IMenuItem>();
+            foreach (IMenuItem m in menu)
+            {
+                if (m is CretaceousCombo && type.Contains("Combo")) newMenu.Add(m);
+                else if (m is Drink && type.Contains("Drink")) newMenu.Add(m);
+                else if (m is Side && type.Contains("Side")) newMenu.Add(m);
+                else if (m is Entree && type.Contains("Entree")) newMenu.Add(m);
+            }
+            return newMenu;
+        }
+        public static List<IMenuItem> FilterByPrice(List<IMenuItem> menu, double? min, double? max)
+        {
+            if (min == null && max == null) return menu;
+            if (min == null) min = double.MinValue;
+            if (max == null) max = double.MaxValue;
+            List<IMenuItem> newMenu = new List<IMenuItem>();
+            foreach (IMenuItem m in menu)
+            {
+                if (!(m.Price < min) && !(m.Price > max))
+                {
+                    newMenu.Add(m);
+                }
+            }
+            return newMenu;
+        }
+        public static List<IMenuItem> FilterByExcludedIngredients(List<IMenuItem> menu, List<string> ingredients)
+        {
+            if (ingredients == null || ingredients.Count == 0) return menu;
+
+            List<IMenuItem> newMenu = new List<IMenuItem>();
+            foreach (IMenuItem m in menu)
+            {
+                bool contains = false;
+                foreach (string i in ingredients)
+                    if (m.Ingredients.Contains(i))
+                        contains = true;
+                if (!contains)
+                    newMenu.Add(m);
+            }
+            return newMenu;
+
+        }
+        public List<string> PossibleIngredients
+        {
+            get
+            {
+                List<string> items = new List<string>();
+                foreach(IMenuItem m in AvailableMenuItems)
+                {
+                    foreach(string i in m.Ingredients)
+                    {
+                        if (!items.Contains(i))
+                            items.Add(i);
+                    }
+                }
+                return items;
+            }
+        }
+
         /// <summary>
         /// Shows all of the items on the menu
         /// </summary>

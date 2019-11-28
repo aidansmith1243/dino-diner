@@ -62,12 +62,16 @@ body {
 .menu-items{
     margin-right: 300px;
 }
-.search-section{
-    height:100%;
+.search-section {
+    height: 100%;
     width: 300px;
     margin-top: 20px;
     position: fixed;
-    top:0;
-    right:0;
-    background-color:aqua;
+    top: 0;
+    right: 0;
+    background-color: aqua;
+}
+.inner-form{
+    position: relative;
+    overflow-y: scroll;
 }
