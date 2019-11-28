@@ -69,9 +69,11 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: aqua;
+    
 }
-.inner-form{
+.inner-form {
     position: relative;
     overflow-y: scroll;
+    height: 85%;
+    background-color: lightgray;
 }

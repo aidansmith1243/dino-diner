@@ -13,6 +13,12 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Menu
     {
+        /// <summary>
+        /// Gives a list of items with the name in the description
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public static List<IMenuItem> FilterByName(List<IMenuItem> menu, string name)
         {
             if (name == null || name.Equals("")) return menu;
@@ -27,6 +33,12 @@ namespace DinoDiner.Menu
             return newMenu;
             
         }
+        /// <summary>
+        /// Gives a list of items based on the types that are included
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static List<IMenuItem> FilterByType(List<IMenuItem> menu, List<string> type)
         {
             if (type == null || type.Count == 0) return menu;
@@ -40,6 +52,13 @@ namespace DinoDiner.Menu
             }
             return newMenu;
         }
+        /// <summary>
+        /// Gives a list of items in the price range
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public static List<IMenuItem> FilterByPrice(List<IMenuItem> menu, double? min, double? max)
         {
             if (min == null && max == null) return menu;
@@ -55,6 +74,12 @@ namespace DinoDiner.Menu
             }
             return newMenu;
         }
+        /// <summary>
+        /// Gives a list without any ingredients in the list
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <param name="ingredients"></param>
+        /// <returns></returns>
         public static List<IMenuItem> FilterByExcludedIngredients(List<IMenuItem> menu, List<string> ingredients)
         {
             if (ingredients == null || ingredients.Count == 0) return menu;
@@ -72,6 +97,9 @@ namespace DinoDiner.Menu
             return newMenu;
 
         }
+        /// <summary>
+        /// Lists all of the ingredients in all of the menu items
+        /// </summary>
         public List<string> PossibleIngredients
         {
             get
